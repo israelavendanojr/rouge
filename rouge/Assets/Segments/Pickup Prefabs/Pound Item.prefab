@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4525442372378661996}
   - component: {fileID: 4525442372378661999}
   - component: {fileID: 4525442372378662006}
-  - component: {fileID: 8559347547164273840}
+  - component: {fileID: 2894029006662875860}
   m_Layer: 0
-  m_Name: Projectile
-  m_TagString: Untagged
+  m_Name: Pound Item
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0.9686275, b: 0.627451, a: 1}
+  m_Color: {r: 1, g: 0.76470596, b: 0.5176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8559347547164273840
+--- !u!114 &2894029006662875860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,10 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4525442372378661998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75226b249b7bbea43ad6df36c396e54e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a72b3c16a56381418dd2a8876568851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Target
-  speed: 20
-  rotationSpeed: 1
-  maxHealth: 2
+  segmentData: {fileID: 11400000, guid: 7937d775c08e53445994568a7dc16552, type: 2}

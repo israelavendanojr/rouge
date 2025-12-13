@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 313473f14f92b02448fa05c902a5ccc2, type: 3}
-  m_Name: Projectile
+  m_Name: Short Turret
   m_EditorClassIdentifier: 
-  segmentColor: {r: 1, g: 0.9686275, b: 0.627451, a: 1}
-  segmentSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  segmentName: Piercing Malware
-  description: Projectile
-  spawnPrefab: {fileID: 4525442372378661998, guid: 01c5000bccd9c114fa548f231135fb2d, type: 3}
+  segmentColor: {r: 0.9960785, g: 0.6666667, b: 0.8941177, a: 1}
+  segmentSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  segmentName: Data Packet Turret
+  description: Short range turret, these rounds then done
+  spawnPrefab: {fileID: 4525442372378661998, guid: 8e53d6e9b53210f4b946eb36bcae89be, type: 3}

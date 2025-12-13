@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 313473f14f92b02448fa05c902a5ccc2, type: 3}
-  m_Name: Projectile
+  m_Name: Bomb
   m_EditorClassIdentifier: 
-  segmentColor: {r: 1, g: 0.9686275, b: 0.627451, a: 1}
+  segmentColor: {r: 0.6901961, g: 0.6627451, b: 0.8941177, a: 1}
   segmentSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  segmentName: Piercing Malware
-  description: Projectile
-  spawnPrefab: {fileID: 4525442372378661998, guid: 01c5000bccd9c114fa548f231135fb2d, type: 3}
+  segmentName: Encryption Bomb
+  description: AOE
+  spawnPrefab: {fileID: 4525442372378661998, guid: 7e45421e4f108c44288d8e6ba3401780, type: 3}

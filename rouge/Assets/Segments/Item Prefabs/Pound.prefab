@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4525442372378661996}
   - component: {fileID: 4525442372378661999}
-  - component: {fileID: 4525442372378662006}
-  - component: {fileID: 8559347547164273840}
+  - component: {fileID: 1705267894705854621}
+  - component: {fileID: 7273985928240980414}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Pound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0.9686275, b: 0.627451, a: 1}
+  m_Color: {r: 1, g: 0.76470596, b: 0.5176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4525442372378662006
-BoxCollider2D:
+--- !u!58 &1705267894705854621
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,23 +96,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &8559347547164273840
+  m_Radius: 3
+--- !u!114 &7273985928240980414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,10 +111,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4525442372378661998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75226b249b7bbea43ad6df36c396e54e, type: 3}
+  m_Script: {fileID: 11500000, guid: b0ea3653fe70722429e69390acf141a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuseTime: 0
+  explosionCollider: {fileID: 1705267894705854621}
   targetTag: Target
-  speed: 20
-  rotationSpeed: 1
-  maxHealth: 2
