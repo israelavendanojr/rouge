@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 650731248584407330}
   - component: {fileID: 1473375797}
   - component: {fileID: 1473375798}
+  - component: {fileID: 4998644401499172950}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -243,6 +244,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  startHealth: 1
   currentHealth: 0
+  OnDamaged: {fileID: 11400000, guid: 4658aef93faac4e48aaa1f321a359c04, type: 2}
+  OnHealed: {fileID: 0}
   OnDeath: {fileID: 11400000, guid: 6ad427daa2ad2c3409cd62f92cbc5796, type: 2}
+--- !u!114 &4998644401499172950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4658aef93faac4e48aaa1f321a359c04, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 650731248584407330}
+        m_TargetAssemblyTypeName: SnakeSegments, Assembly-CSharp
+        m_MethodName: RemoveLastSegment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

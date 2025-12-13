@@ -17,10 +17,29 @@ public class SnakeSegments : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = true;
 
+    private HealthComponent _healthComponent;
+
+    private void Awake()
+    {
+        _healthComponent = GetComponent<HealthComponent>();
+        if (_healthComponent == null)
+        {
+            Debug.LogError("SnakeSegments requires a HealthComponent!");
+        }
+        else
+        {
+            // Subscribe to damage event
+            if (_healthComponent.OnDamaged != null)
+                _healthComponent.OnDamaged.RegisterListener(GetComponent<GameEventListener>());
+        }
+    }
+
     private void Start()
     {
         _positionHistory.Add(transform.position);
+        SyncHealthToSegments();
     }
+    
 
     private void Update()
     {
@@ -73,8 +92,6 @@ public class SnakeSegments : MonoBehaviour
                 }
             }
         }
-
-            
     }
 
     public void AddSegment(SegmentData data)
@@ -83,20 +100,20 @@ public class SnakeSegments : MonoBehaviour
         {
             if (showDebugInfo)
             {
-                Debug.Log($"Max segments ({maxSegments}) reached. Consuming oldest segment to make room.");
+                Debug.Log($"Max segments ({maxSegments}) reached. Consuming oldest segment.");
             }
             ConsumeFirstSegment();
         }
 
         if (segmentPrefab == null)
         {
-            Debug.LogError("Segment prefab is not assigned in SnakeSegments!");
+            Debug.LogError("Segment prefab not assigned!");
             return;
         }
 
         if (data == null)
         {
-            Debug.LogError("Cannot add segment with null data!");
+            Debug.LogError("Cannot add null segment data!");
             return;
         }
 
@@ -116,21 +133,20 @@ public class SnakeSegments : MonoBehaviour
         Segment segment = segmentObj.GetComponent<Segment>();
         if (segment == null)
         {
-            Debug.LogError("Segment prefab doesn't have a Segment component!");
+            Debug.LogError("Segment prefab missing Segment component!");
             Destroy(segmentObj);
             return;
         }
 
         segment.Initialize(data);
-        
         _segments.Add(segment);
+
+        SyncHealthToSegments();
 
         if (showDebugInfo)
         {
-            Debug.Log($"Added segment: {data.segmentName}. Total segments: {_segments.Count}");
+            Debug.Log($"Added: {data.segmentName}. Total: {_segments.Count}");
         }
-
-
     }
 
     public void ConsumeFirstSegment()
@@ -147,11 +163,12 @@ public class SnakeSegments : MonoBehaviour
         _segments.RemoveAt(0);
         Destroy(firstSegment.gameObject);
 
+        SyncHealthToSegments();
+
         if (showDebugInfo)
         {
-            Debug.Log($"Consumed segment. Remaining segments: {_segments.Count}");
+            Debug.Log($"Consumed segment. Remaining: {_segments.Count}");
         }
-
     }
 
     public void ConsumeLastSegment()
@@ -164,27 +181,53 @@ public class SnakeSegments : MonoBehaviour
 
         int lastIndex = _segments.Count - 1;
         Segment lastSegment = _segments[lastIndex];
-        lastSegment.Consume();
+        lastSegment.Consume(); // Triggers the segment's ability
         
         _segments.RemoveAt(lastIndex);
         Destroy(lastSegment.gameObject);
 
+        SyncHealthToSegments();
+
         if (showDebugInfo)
         {
-            Debug.Log($"Consumed segment. Remaining segments: {_segments.Count}");
+            Debug.Log($"Consumed segment. Remaining: {_segments.Count}");
+        }
+    }
+
+    public void RemoveLastSegment()
+    {
+        if (_segments.Count == 0)
+        {
+            Debug.Log("No segments to remove!");
+            return;
         }
 
-    }
-    
-    public int GetSegmentCount()
-    {
-        return _segments.Count;
+        int lastIndex = _segments.Count - 1;
+        Segment lastSegment = _segments[lastIndex];
+        // Don't call Consume() - just remove it
+        
+        _segments.RemoveAt(lastIndex);
+        Destroy(lastSegment.gameObject);
+
+        SyncHealthToSegments();
+
+        if (showDebugInfo)
+        {
+            Debug.Log($"Lost segment from damage. Remaining: {_segments.Count}");
+        }
     }
 
-    public List<Segment> GetSegments()
+    private void SyncHealthToSegments()
     {
-        return new List<Segment>(_segments);
+        if (_healthComponent == null) return;
+
+        int segmentHealth = _segments.Count;
+        _healthComponent.SetMaxHealth(segmentHealth + 1);
+        _healthComponent.Heal(segmentHealth + 1); 
     }
+    
+    public int GetSegmentCount() => _segments.Count;
+    public List<Segment> GetSegments() => new List<Segment>(_segments);
 
     private void OnDrawGizmos()
     {

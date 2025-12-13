@@ -5,13 +5,12 @@ public class ConsumeSegment : MonoBehaviour
 {
     [SerializeField] private InputActionReference interactAction;
     private SnakeSegments _snakeSegments;
-    private HealthComponent _healthComponent;
 
     private void Awake()
     {
         _snakeSegments = GetComponent<SnakeSegments>();
-        _healthComponent = GetComponent<HealthComponent>();
     }
+
     private void OnEnable()
     {
         if (interactAction != null && interactAction.action != null)
@@ -32,7 +31,7 @@ public class ConsumeSegment : MonoBehaviour
 
     private void OnSegmentConsumed(InputAction.CallbackContext context)
     {
+        // Consuming costs health (segment = health)
         _snakeSegments.ConsumeLastSegment();
     }
-
 }
