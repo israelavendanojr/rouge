@@ -73,23 +73,20 @@ public class SnakeSegments : MonoBehaviour
                 }
             }
         }
+
+            
     }
 
     public void AddSegment(SegmentData data)
     {
-        // 1. Check if max capacity is reached
         if (_segments.Count >= maxSegments)
         {
-            // If at max, remove the oldest segment (the first one) to make room
             if (showDebugInfo)
             {
                 Debug.Log($"Max segments ({maxSegments}) reached. Consuming oldest segment to make room.");
             }
-            // Use ConsumeFirstSegment to free up a slot
             ConsumeFirstSegment();
         }
-
-        // 2. Continue with the adding process (which is now guaranteed to not exceed maxSegments)
 
         if (segmentPrefab == null)
         {
@@ -106,12 +103,10 @@ public class SnakeSegments : MonoBehaviour
         Vector3 spawnPosition;
         if (_segments.Count > 0)
         {
-            // Spawn at the position of the new last segment (which was the old last segment's spot)
             spawnPosition = _segments[_segments.Count - 1].transform.position;
         }
         else
         {
-            // Only runs if the snake was initially empty
             spawnPosition = transform.position - transform.up * segmentSpacing;
         }
 
@@ -134,6 +129,8 @@ public class SnakeSegments : MonoBehaviour
         {
             Debug.Log($"Added segment: {data.segmentName}. Total segments: {_segments.Count}");
         }
+
+
     }
 
     public void ConsumeFirstSegment()
@@ -154,6 +151,7 @@ public class SnakeSegments : MonoBehaviour
         {
             Debug.Log($"Consumed segment. Remaining segments: {_segments.Count}");
         }
+
     }
 
     public void ConsumeLastSegment()
@@ -175,6 +173,7 @@ public class SnakeSegments : MonoBehaviour
         {
             Debug.Log($"Consumed segment. Remaining segments: {_segments.Count}");
         }
+
     }
     
     public int GetSegmentCount()

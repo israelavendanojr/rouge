@@ -7,13 +7,15 @@ public class EnemyFollowState : State
     private float moveSpeed;
     private TargetSystem targetSystem;
     private int targetIndex;
+    private int damage;
 
-    public EnemyFollowState(FollowerEnemy enemy, float moveSpeed, TargetSystem system) : base(enemy)
+    public EnemyFollowState(FollowerEnemy enemy, float moveSpeed, TargetSystem system, int damage) : base(enemy)
     {
         this.enemy = enemy;
         this.moveSpeed = moveSpeed;
         this.rb = enemy.GetRigidbody();
         this.targetSystem = system;
+        this.damage = damage;
     }
 
     public override void Enter()
@@ -44,6 +46,7 @@ public class EnemyFollowState : State
             rb.velocity = Vector2.zero;
         }
 
+        // Check for death
         if (enemy.healthComponent.GetCurrentHealth() <= 0)
         {
             enemy.SetState(new EnemyDeathState(enemy));
@@ -56,5 +59,21 @@ public class EnemyFollowState : State
         {
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public override void OnTriggerEnter(Collider2D collision)
+    {
+        GameObject other = collision.gameObject;
+
+        if (other.CompareTag("Player"))
+        {
+            HealthComponent targetHealth = other.GetComponent<HealthComponent>();
+            if (targetHealth != null)
+            {
+                targetHealth.TakeDamage(damage);
+                // enemy.healthComponent.TakeDamage(1);
+            }
+
+        }    
     }
 }

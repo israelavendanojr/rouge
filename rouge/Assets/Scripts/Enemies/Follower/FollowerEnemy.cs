@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class FollowerEnemy : BaseEnemy
 {
-    [Header("Movement")]
+    [Header("")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private int damage = 1;
+
     private EnemyFollowState followState;
     protected override void Awake()
     {
@@ -12,10 +14,9 @@ public class FollowerEnemy : BaseEnemy
         healthComponent = GetComponent<HealthComponent>();
 
         TargetSystem targetSystem = GameObject.FindGameObjectWithTag("Player")?.GetComponent<TargetSystem>();
-        followState = new EnemyFollowState(this, moveSpeed, targetSystem);
+        followState = new EnemyFollowState(this, moveSpeed, targetSystem, damage);
     }
 
     public override State InitialState() => followState;
 
-    
 }

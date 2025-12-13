@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4525442372378661992}
   - component: {fileID: 650731248584407330}
   - component: {fileID: 1473375797}
+  - component: {fileID: 1473375798}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -211,7 +212,7 @@ MonoBehaviour:
   segmentPrefab: {fileID: 4525442372378661998, guid: 2ddb0a6a6ee2a5d4a994b2f59317675c, type: 3}
   segmentSpacing: 2.5
   followSpeed: 10
-  maxSegments: 3
+  maxSegments: 2
   _segments: []
   showDebugInfo: 0
 --- !u!114 &1473375797
@@ -226,6 +227,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847604465c415c4288e071e3c9f8530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeVal: 15
-  targetCount: 4
+  rangeVal: 12
+  targetCount: 7
   seconds: 0.5
+--- !u!114 &1473375798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7cc46794302b74087b3ae585f13811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  startHealth: 1
+  currentHealth: 0
+  OnDeath: {fileID: 11400000, guid: 6ad427daa2ad2c3409cd62f92cbc5796, type: 2}

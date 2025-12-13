@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class BaseEnemy : StateMachine
 {
     [Header("Components")]
-    public HealthComponent healthComponent;
+    [HideInInspector] public HealthComponent healthComponent;
     protected Rigidbody2D rb;
     public Rigidbody2D GetRigidbody() => rb;
 

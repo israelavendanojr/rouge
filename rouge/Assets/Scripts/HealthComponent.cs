@@ -7,6 +7,10 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private int maxHealth = 1;
     [SerializeField] private int currentHealth;
     
+    [Header("Events")]
+    public GameEvent OnDamaged;
+    public GameEvent OnHealed;
+    
     public GameEvent OnDeath;
 
     private void Awake()
@@ -22,6 +26,7 @@ public class HealthComponent : MonoBehaviour
         if (currentHealth <= 0) return;
 
         currentHealth -= damage;
+        
         // Debug.Log($"{gameObject.name} took {damage} damage. Health: {currentHealth}/{maxHealth}");
 
         if (currentHealth <= 0)
@@ -30,10 +35,23 @@ public class HealthComponent : MonoBehaviour
             if (OnDeath != null)
                 OnDeath.Raise();
         }
+        else
+        {
+            if (OnDamaged != null)
+                OnDamaged.Raise();
+        }
     }
     
-    public void RestoreHealth(int amount)
+    public void Heal(int amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        if (OnHealed != null)
+                OnHealed.Raise();
+    }
+
+    public void SetMaxHealth(int max)
+    {
+        maxHealth = max;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
     }
 }
