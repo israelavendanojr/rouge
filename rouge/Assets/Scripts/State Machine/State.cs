@@ -15,6 +15,9 @@ public abstract class State
     public virtual void Update()
     {
     }
+    public virtual void FixedUpdate()
+    {
+    }
     public virtual void Exit()
     {
     }
@@ -25,5 +28,8 @@ public abstract class State
     {
 
     }
-
+    public override string ToString()
+    {
+        return GetType().Name;
+    }
 }

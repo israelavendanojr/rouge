@@ -12,9 +12,13 @@ public abstract class StateMachine : MonoBehaviour
         _currentState = InitialState();
         _currentState.Enter();
     }
-    void FixedUpdate()
+    void Update()
     {
         _currentState.Update();
+    }
+    void FixedUpdate()
+    {
+        _currentState.FixedUpdate();
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,13 +34,15 @@ public abstract class StateMachine : MonoBehaviour
         _currentState = state;
         _currentState.Enter();
     }
-    // void OnDrawGizmos() 
-    // {
-    //     if (_currentState == null)
-    //         return;
+    
+    void OnDrawGizmos() 
+    {
+        // Only run this code in the editor when the game is running or paused.
+        if (!Application.isPlaying || _currentState == null)
+            return;
 
-    //     Handles.color = Color.green;
-    //     Handles.Label(transform.position, _currentState.ToString());
-    // }
+        Handles.color = Color.green;
+        Handles.Label(transform.position + Vector3.up * 1.5f, _currentState.ToString()); 
+    }
 
 }

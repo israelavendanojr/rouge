@@ -140,7 +140,7 @@ public class SnakeSegments : MonoBehaviour
     {
         if (_segments.Count == 0)
         {
-            Debug.LogWarning("No segments to consume!");
+            Debug.Log("No segments to consume!");
             return;
         }
 
@@ -160,7 +160,7 @@ public class SnakeSegments : MonoBehaviour
     {
         if (_segments.Count == 0)
         {
-            Debug.LogWarning("No segments to consume!");
+            Debug.Log("No segments to consume!");
             return;
         }
 

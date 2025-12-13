@@ -33,7 +33,7 @@ public class Segment : MonoBehaviour
 
     public void Consume()
     {
-        Debug.Log($"Consumed segment: {_data.segmentName}");
+        // Debug.Log($"Consumed segment: {_data.segmentName}");
         _data.OnConsume(transform.position, transform.rotation);
     }
 

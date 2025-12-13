@@ -9,30 +9,31 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float rotationSpeed = 5f;
     
-    [Header("Health")]
-    [SerializeField] private int maxHealth = 3;
+    [Header("Projectile Stats")]
+    [SerializeField] private int damage = 1;
+
+    [Header("Components")]
+    private HealthComponent health;
     
     private Vector3 _startPosition;
     private Vector3 _endPosition;
     private Vector3 _direction;
-    private int _currentHealth;
+
+    private void Awake()
+    {
+        health = GetComponent<HealthComponent>();
+    }
 
     private void Start()
     {
-        _currentHealth = maxHealth;
         _startPosition = transform.position;
         _endPosition = FindNearestTargetPosition();
         _direction = (_endPosition - _startPosition).normalized;
     }
 
+
     private void Update()
     {
-        if (_currentHealth <= 0)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        
         MoveAlongPath();
     }
 
@@ -59,49 +60,44 @@ public class Projectile : MonoBehaviour
     {
         transform.position += _direction * speed * Time.deltaTime;
         
-        // Rotate to face direction
         if (_direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, _direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
         
-        // Destroy if reached or passed endpoint
-        if (Vector3.Distance(transform.position, _endPosition) < 0.1f)
+    }
+
+    private GameObject FindNearestTarget()
+    {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag(targetTag);
+        float nearestDistance = float.MaxValue;
+        GameObject nearestTarget = null;
+        
+        foreach (GameObject target in targets)
         {
-            Destroy(gameObject);
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestTarget = target;
+            }
         }
+        return nearestTarget;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(targetTag))
         {
-            OnCollision(other.gameObject);
-        }
-    }
+            HealthComponent targetHealth = other.GetComponent<HealthComponent>();
+            if (targetHealth != null)
+                targetHealth.TakeDamage(damage);
 
-    private void OnCollision(GameObject other)
-    {
-        _currentHealth--;
-        Debug.Log($"Projectile hit {other.name}. Health remaining: {_currentHealth}");
-        
-        if (_currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+            health.TakeDamage(1);
+        }    
     }
-
-    public void TakeDamage(int damage = 1)
-    {
-        _currentHealth -= damage;
-        
-        if (_currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
+    
     private void OnDrawGizmosSelected()
     {
         if (Application.isPlaying)
