@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4525442372378661997}
   - component: {fileID: 4525442372378661992}
   - component: {fileID: 650731248584407330}
+  - component: {fileID: 1473375797}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 0.6901961, g: 0.9215687, b: 0.5764706, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -210,6 +211,21 @@ MonoBehaviour:
   segmentPrefab: {fileID: 4525442372378661998, guid: 2ddb0a6a6ee2a5d4a994b2f59317675c, type: 3}
   segmentSpacing: 2.5
   followSpeed: 10
-  maxSegments: 6
+  maxSegments: 3
   _segments: []
-  showDebugInfo: 1
+  showDebugInfo: 0
+--- !u!114 &1473375797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9847604465c415c4288e071e3c9f8530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeVal: 15
+  targetCount: 4
+  seconds: 0.5

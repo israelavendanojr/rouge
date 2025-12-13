@@ -11,7 +11,7 @@ public class EnemyDeathState : State
     public override void Enter()
     {
         // To be implemented - play death animation, effects, etc.
-        GameObject.Destroy(enemy.gameObject, 0.5f); 
+        GameObject.Destroy(enemy.gameObject, 0f); 
     }
 
     public override void Update()

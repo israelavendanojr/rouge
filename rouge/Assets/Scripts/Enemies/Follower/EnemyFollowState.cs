@@ -43,6 +43,11 @@ public class EnemyFollowState : State
         {
             rb.velocity = Vector2.zero;
         }
+
+        if (enemy.healthComponent.GetCurrentHealth() <= 0)
+        {
+            enemy.SetState(new EnemyDeathState(enemy));
+        }
     }
 
     public override void Exit()

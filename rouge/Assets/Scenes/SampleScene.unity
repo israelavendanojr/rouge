@@ -1355,11 +1355,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4525442372378661996, guid: 9a62da7483efe8545934dc3fdbb4db9a, type: 3}
   m_PrefabInstance: {fileID: 261505017}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1200726666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4525442372378661998, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
-  m_PrefabInstance: {fileID: 1519986357}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1230194056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4525442372378661996, guid: a7c1a328195ccab48abec45b7e722a20, type: 3}
@@ -1782,21 +1777,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a62da7483efe8545934dc3fdbb4db9a, type: 3}
---- !u!114 &1473375797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200726666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9847604465c415c4288e071e3c9f8530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rangeVal: 15
-  targetCount: 4
-  seconds: 0.5
 --- !u!1001 &1500729651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1861,14 +1841,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 650731248584407330, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
-      propertyPath: maxSegments
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 650731248584407330, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
-      propertyPath: showDebugInfo
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4525442372378661996, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1916,14 +1888,6 @@ PrefabInstance:
     - target: {fileID: 4525442372378661998, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4525442372378661999, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-    - target: {fileID: 4525442372378661999, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}

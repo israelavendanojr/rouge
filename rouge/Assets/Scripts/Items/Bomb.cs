@@ -42,7 +42,7 @@ public class Bomb : MonoBehaviour
             {
                 if (hit.CompareTag(targetTag))
                 {
-                    Debug.Log($"Bomb hit: {hit.gameObject.name}");
+                    // Debug.Log($"Bomb hit: {hit.gameObject.name}");
                     hit.GetComponent<HealthComponent>()?.TakeDamage(1);
                 }
             }

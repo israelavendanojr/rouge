@@ -22,7 +22,7 @@ public class HealthComponent : MonoBehaviour
         if (currentHealth <= 0) return;
 
         currentHealth -= damage;
-        Debug.Log($"{gameObject.name} took {damage} damage. Health: {currentHealth}/{maxHealth}");
+        // Debug.Log($"{gameObject.name} took {damage} damage. Health: {currentHealth}/{maxHealth}");
 
         if (currentHealth <= 0)
         {
