@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601b9e3705f19834dbea269f0e653f92, type: 3}
   m_Name: Wave1
   m_EditorClassIdentifier: 
-  pointBudget: 100
+  pointBudget: 10
   duration: 30
-  availableSpawnables: []
+  spawnInterval: 4
+  availableSpawnables:
+  - {fileID: 11400000, guid: 8a53fbe42c3095141998ae9a0b7997ab, type: 2}
+  - {fileID: 11400000, guid: 12361a8a137970e42a28cba0239a2272, type: 2}
   useCustomSpawnables: 0
   customSpawnables: []
