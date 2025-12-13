@@ -95,6 +95,11 @@ public class Projectile : MonoBehaviour
                 targetHealth.TakeDamage(damage);
 
             health.TakeDamage(1);
+
+            if (health.GetCurrentHealth() <= 0)
+            {
+                Destroy(gameObject);
+            }
         }    
     }
     
