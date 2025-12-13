@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847604465c415c4288e071e3c9f8530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeVal: 12
-  targetCount: 7
+  rangeVal: 18
+  targetCount: 9
   seconds: 0.5
 --- !u!114 &1473375798
 MonoBehaviour:

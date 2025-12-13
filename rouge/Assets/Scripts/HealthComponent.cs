@@ -46,7 +46,7 @@ public class HealthComponent : MonoBehaviour
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         if (OnHealed != null)
-                OnHealed.Raise();
+            OnHealed.Raise();
     }
 
     public void SetMaxHealth(int max)
