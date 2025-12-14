@@ -18,7 +18,10 @@ public class GameManager : StateMachine
     [SerializeField] private int wave = 1;
     [SerializeField] private float waitTime = 5;
     public float GetWaitTime() => waitTime;
+    [SerializeField] private int shopFrequency = 1;
+    public int GetShopFrequency() => shopFrequency;
     [SerializeField] private float shopTime = 5;
+    public float GetShopTime() => shopTime;
 
     [SerializeField] private GameEvent onWaveStarted;
     
@@ -50,6 +53,11 @@ public class GameManager : StateMachine
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );
+    }
+
+    public void ReachEndState()
+    {
+        SetState(new GameEndState(this));
     }
 
     public int GetWave() => wave;

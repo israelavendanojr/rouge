@@ -2,24 +2,32 @@ using UnityEngine;
 
 public class GameShopState : State
 {
+    private float shopTime;               
+    private GameManager _gameManager;
+
     public GameShopState(StateMachine stateMachine) : base(stateMachine)
     {
+        _gameManager = stateMachine as GameManager;
+        shopTime = _gameManager.GetShopTime(); 
     }
 
     public override void Enter()
     {
-        Debug.Log("Entered Game Shop State");
-        // Logic for displaying the shop UI, pausing gameplay, etc.
     }
 
     public override void Update()
     {
-        // Listen for player shop actions or exit button
+        shopTime -= Time.deltaTime;
+
+        if (shopTime <= 0f)
+        {
+            shopTime = 0f;
+            _gameManager.SetState(new GameWaveState(_gameManager));
+        }
     }
 
     public override void Exit()
     {
-        Debug.Log("Exiting Game Shop State");
-        // Logic to hide the shop UI, unpause if necessary
+        
     }
 }

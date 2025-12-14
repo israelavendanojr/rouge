@@ -26,11 +26,18 @@ public class GameWaveState : State
         if (waveSpawner.IsWaveComplete())
         {
             waveSpawner.currentWaveIndex++;
-            if (waveSpawner.WavesRemaining())
-                _gameManager.SetState(new GameWaitState(_gameManager));
+            if (!waveSpawner.WavesRemaining())
+            {
+                _gameManager.ReachEndState();
+            }
+
+            bool isShopTime = (_gameManager.GetWave() % _gameManager.GetShopFrequency() == 0) ? true : false;
+
+            if (isShopTime)
+                _gameManager.SetState(new GameShopState(_gameManager));
             else
-                UnityEngine.Debug.Log("All waves completed! Game Over.");
-                // _gameManager.ChangeState(new GameOverState(_gameManager));
+                _gameManager.SetState(new GameWaitState(_gameManager));
+                
         }
     }
 
