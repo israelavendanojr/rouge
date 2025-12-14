@@ -235,12 +235,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 650731248584407330, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
+      propertyPath: followSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 650731248584407330, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: maxSegments
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 650731248584407330, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: segmentSpacing
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4525442372378661996, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: m_RootOrder
