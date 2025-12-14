@@ -6,6 +6,8 @@ public abstract class BaseEnemy : StateMachine
     [HideInInspector] public HealthComponent healthComponent;
     protected Rigidbody2D rb;
     public Rigidbody2D GetRigidbody() => rb;
+    protected Spawnable spawnable;
+    public Spawnable GetSpawnable() => spawnable;
 
     [Header("States")]
     protected EnemyIdleState idleState;
@@ -15,6 +17,7 @@ public abstract class BaseEnemy : StateMachine
     {
         rb = GetComponent<Rigidbody2D>();
         healthComponent = GetComponent<HealthComponent>();
+        spawnable = GetComponent<Spawnable>();
         
         if (healthComponent == null)
         {

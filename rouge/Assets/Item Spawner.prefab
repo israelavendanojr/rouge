@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cc46794302b74087b3ae585f13811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 300
   currentHealth: 0
   OnDamaged: {fileID: 0}
   OnHealed: {fileID: 0}
@@ -69,7 +69,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11f0ea6e674f0a34893b68058592de53, type: 2}
   spawnLocations:
   - {fileID: 991382566246205548}
-  spawnInterval: 0
+  spawnInterval: 3
 --- !u!1 &6149644737870888515
 GameObject:
   m_ObjectHideFlags: 0
