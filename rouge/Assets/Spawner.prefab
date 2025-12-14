@@ -210,6 +210,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d1cf752458c07b429521462721265a2, type: 2}
   - {fileID: 11400000, guid: 3724215be77124b4c90b3e3bd78b2196, type: 2}
   currentWaveIndex: 0
+  onWaveStart: {fileID: 11400000, guid: 1b5da773dd6411947bb58ddcd60c7cac, type: 2}
   spawnLocations:
   - {fileID: 6252001864559454946}
   - {fileID: 6252001864456093707}

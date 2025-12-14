@@ -13,15 +13,19 @@ public class SnakeSegments : MonoBehaviour
     
     [SerializeField] private List<Segment> _segments = new List<Segment>();
     private List<Vector3> _positionHistory = new List<Vector3>();
+
+    [SerializeField] private GameEvent onUpdate; 
     
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = true;
 
     private HealthComponent _healthComponent;
+    private GameManager _gameManager;
 
     private void Awake()
     {
         _healthComponent = GetComponent<HealthComponent>();
+        _gameManager = FindObjectOfType<GameManager>();
         if (_healthComponent == null)
         {
             Debug.LogError("SnakeSegments requires a HealthComponent!");
@@ -92,6 +96,9 @@ public class SnakeSegments : MonoBehaviour
                 }
             }
         }
+
+        if (onUpdate != null)
+            onUpdate.Raise();
     }
 
     public void AddSegment(SegmentData data)
@@ -140,6 +147,8 @@ public class SnakeSegments : MonoBehaviour
 
         segment.Initialize(data);
         _segments.Add(segment);
+        if (_gameManager != null)
+            _gameManager.AddScore(GetSegmentCount() * _gameManager.GetWave());
 
         SyncHealthToSegments();
 
@@ -183,6 +192,9 @@ public class SnakeSegments : MonoBehaviour
         Segment lastSegment = _segments[lastIndex];
         lastSegment.Consume(); // Triggers the segment's ability
         
+        if (_gameManager != null)
+            _gameManager.AddScore(GetSegmentCount());
+
         _segments.RemoveAt(lastIndex);
         Destroy(lastSegment.gameObject);
 

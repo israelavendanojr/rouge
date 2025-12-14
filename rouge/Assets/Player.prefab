@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousePositionAction: {fileID: 1816878547492459091, guid: 0bcd7ecfc8ce9fc468c9102698c786b0, type: 3}
   moveSpeed: 18
-  stopDistance: 2
+  stopDistance: 1
 --- !u!114 &4525442372378661992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,10 +212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 4525442372378661998, guid: 2ddb0a6a6ee2a5d4a994b2f59317675c, type: 3}
-  segmentSpacing: 1
+  segmentSpacing: 2
   followSpeed: 2
   maxSegments: 2
   _segments: []
+  onUpdate: {fileID: 11400000, guid: 37d2cb2a8d27d5c4bb5cd2c46f769f99, type: 2}
   showDebugInfo: 0
 --- !u!114 &1473375797
 MonoBehaviour:

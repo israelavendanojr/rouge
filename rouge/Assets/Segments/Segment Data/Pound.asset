@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentColor: {r: 1, g: 1, b: 1, a: 1}
   segmentSprite: {fileID: -924227998, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
+  segmentIcon: {fileID: 1219224025, guid: 1ede86db34e2bb14b9d5438f97eed031, type: 3}
   segmentName: Data Pound
   description: Hurt near enemies
   spawnPrefab: {fileID: 4525442372378661998, guid: 949fc5de5b462ea44983708f09de854d, type: 3}

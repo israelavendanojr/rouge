@@ -16,7 +16,7 @@ MonoBehaviour:
   duration: 10
   spawnInterval: 1.5
   availableSpawnables:
-  - {fileID: 11400000, guid: 12361a8a137970e42a28cba0239a2272, type: 2}
+  - {fileID: 11400000, guid: 8a53fbe42c3095141998ae9a0b7997ab, type: 2}
   - {fileID: 11400000, guid: 1bb619a5590a0c3488bc12d76f20e55f, type: 2}
   - {fileID: 11400000, guid: 92b883030457d5b46b431265eff0578e, type: 2}
   useCustomSpawnables: 0

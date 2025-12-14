@@ -6,6 +6,7 @@ public class SegmentData : ScriptableObject
     [Header("Visual")]
     public Color segmentColor = Color.white;
     public Sprite segmentSprite;
+    public Sprite segmentIcon;
     
     [Header("Properties")]
     public string segmentName;

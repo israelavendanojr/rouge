@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -6,6 +7,7 @@ public class WaveSpawner : MonoBehaviour
     [Header("Wave Configuration")]
     public WaveData[] waves;
     public int currentWaveIndex = 0;
+    // [SerializeField] private GameEvent onWaveStart;
     
     [Header("Spawn Settings")]
     public Transform[] spawnLocations;
@@ -18,7 +20,17 @@ public class WaveSpawner : MonoBehaviour
     private float waveTimer;
     private float spawnInterval; // Keep this field
     private float spawnTimer;
+
+    private GameManager gameManager;
     
+    void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            UnityEngine.Debug.LogError("WaveSpawner: GameManager not found!");
+        }
+    }
     void Start()
     {
         if (waves.Length > 0)
@@ -56,6 +68,9 @@ public class WaveSpawner : MonoBehaviour
     void StartWave()
     {
         WaveData wave = waves[currentWaveIndex];
+
+        gameManager.NextWave(currentWaveIndex + 1);
+        // UnityEngine.Debug.Log($"WaveSpawner: Starting Wave {currentWaveIndex + 1}");
         
         if (wave.useCustomSpawnables)
         {

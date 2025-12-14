@@ -9,6 +9,12 @@ public abstract class BaseEnemy : StateMachine
     protected Spawnable spawnable;
     public Spawnable GetSpawnable() => spawnable;
 
+    private GameManager gameManager;
+    public GameManager GetGameManager() => gameManager;
+
+    [SerializeField] private int scoreValue = 1;
+    public int GetScoreValue() => scoreValue;
+
     [Header("States")]
     protected EnemyIdleState idleState;
     protected EnemyDeathState deathState;
@@ -18,6 +24,7 @@ public abstract class BaseEnemy : StateMachine
         rb = GetComponent<Rigidbody2D>();
         healthComponent = GetComponent<HealthComponent>();
         spawnable = GetComponent<Spawnable>();
+        gameManager = FindObjectOfType<GameManager>();
         
         if (healthComponent == null)
         {

@@ -13,6 +13,7 @@ public class EnemyDeathState : State
         // To be implemented - play death animation, effects, etc.
         
         enemy.GetSpawnable().SpawnOne();
+        enemy.GetGameManager().AddScore(enemy.GetScoreValue() * enemy.GetGameManager().GetWave());
         GameObject.Destroy(enemy.gameObject, 0f); 
     }
 
