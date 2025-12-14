@@ -66,9 +66,7 @@ public class WaveSpawner : MonoBehaviour
             GenerateItems(wave);
         }
         
-        // --- CHANGE 1: Use the interval from WaveData directly ---
         spawnInterval = wave.spawnInterval;
-        // --------------------------------------------------------
 
         waveTimer = wave.duration;
         spawnTimer = 0; // Spawn first item immediately

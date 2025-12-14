@@ -4,6 +4,8 @@ public class Bomb : MonoBehaviour
 {
     [Header("Explosion Settings")]
     [SerializeField] private float fuseTime = 3f;
+    [SerializeField] private int damage = 1;
+
     [SerializeField] private CircleCollider2D explosionCollider;
     [SerializeField] private string targetTag = "Target";
     
@@ -43,7 +45,7 @@ public class Bomb : MonoBehaviour
                 if (hit.CompareTag(targetTag))
                 {
                     // Debug.Log($"Bomb hit: {hit.gameObject.name}");
-                    hit.GetComponent<HealthComponent>()?.TakeDamage(1);
+                    hit.GetComponent<HealthComponent>()?.TakeDamage(damage);
                 }
             }
         }

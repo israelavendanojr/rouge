@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3652524346472989345}
   - component: {fileID: 3388453276437518971}
   m_Layer: 0
-  m_Name: Follower
+  m_Name: Tank
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cc46794302b74087b3ae585f13811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 5
   currentHealth: 0
   OnDamaged: {fileID: 0}
   OnHealed: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 0}
-  moveSpeed: 7
+  moveSpeed: 2
   damage: 1
 --- !u!114 &3652524346472989345
 MonoBehaviour:

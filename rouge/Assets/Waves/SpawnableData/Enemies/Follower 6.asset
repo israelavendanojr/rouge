@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Follower 6
   m_EditorClassIdentifier: 
   prefab: {fileID: 7190069199208934614, guid: 386f4bb4eb385994f84608bf656c422f, type: 3}
-  cost: 3
+  cost: 5
   spawnWeight: 1

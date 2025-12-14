@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DasherEnemy : MonoBehaviour
+public class DasherEnemy : BaseEnemy
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Dash Settings")]
+    [SerializeField] private float dashForce = 10f;
+    [SerializeField] private float dashDuration = 0.3f;
+    [SerializeField] private float stopDuration = 1.5f; 
+    [SerializeField] private int damage = 1;
+    
+    [SerializeField] private TargetSystem targetSystem; 
+
+    private EnemyDashState dashState;
+
+    protected override void Awake()
     {
-        
+        base.Awake();
+
+        TargetSystem targetSystem = GameObject.FindGameObjectWithTag("Player")?.GetComponent<TargetSystem>();
+        dashState = new EnemyDashState(this, targetSystem, dashForce, dashDuration, stopDuration, damage);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public override State InitialState() => dashState;
 }
