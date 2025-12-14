@@ -33,8 +33,7 @@ public class WaveSpawner : MonoBehaviour
     }
     void Start()
     {
-        if (waves.Length > 0)
-            StartWave();
+        
     }
     
     void FixedUpdate()
@@ -57,19 +56,17 @@ public class WaveSpawner : MonoBehaviour
         spawnedItems.RemoveAll(item => item == null);
         
         // Check if wave is complete
-        if (waveTimer <= 0 && spawnedItems.Count <= 0 && itemsToSpawn.Count <= 0)
-        {
-            currentWaveIndex++;
-            if (currentWaveIndex < waves.Length)
-                StartWave();
-        }
+        
     }
     
-    void StartWave()
+    public void StartWave()
     {
+        if (waves.Length <= 0)
+            return;
+            
         WaveData wave = waves[currentWaveIndex];
 
-        gameManager.NextWave(currentWaveIndex + 1);
+        gameManager.UpdateWave(currentWaveIndex + 1);
         // UnityEngine.Debug.Log($"WaveSpawner: Starting Wave {currentWaveIndex + 1}");
         
         if (wave.useCustomSpawnables)
@@ -139,5 +136,15 @@ public class WaveSpawner : MonoBehaviour
         spawnedItems.Add(spawnedItem);
         
         spawnLocationIndex = (spawnLocationIndex + 1) % spawnLocations.Length;
+    }
+
+    public bool IsWaveComplete()
+    {
+        return waveTimer <= 0 && spawnedItems.Count <= 0 && itemsToSpawn.Count <= 0;
+    }
+
+    public bool WavesRemaining()
+    {
+        return currentWaveIndex < waves.Length;
     }
 }

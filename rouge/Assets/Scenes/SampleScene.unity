@@ -194,7 +194,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398118678
 GameObject:
@@ -454,7 +454,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &585612203
 PrefabInstance:
@@ -671,9 +671,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4525442372378661992, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4525442372378661996, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4525442372378661996, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: m_LocalPosition.x
@@ -715,6 +719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4525442372378661997, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4525442372378661998, guid: 5a3c6c29fdb9a5142a04a53db0bb3c06, type: 3}
       propertyPath: m_Name
       value: Player
@@ -748,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3997786441095602378, guid: b70b7f8cdf1ba3f42b54dc0cefe08fd1, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3997786441095602378, guid: b70b7f8cdf1ba3f42b54dc0cefe08fd1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -807,9 +815,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1776369976}
+    - target: {fileID: 4910204087872978341, guid: 3e6714a97e35be24a9ae4c244d27cbd5, type: 3}
+      propertyPath: shopTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910204087872978341, guid: 3e6714a97e35be24a9ae4c244d27cbd5, type: 3}
+      propertyPath: waitTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910204087872978341, guid: 3e6714a97e35be24a9ae4c244d27cbd5, type: 3}
+      propertyPath: startAction
+      value: 
+      objectReference: {fileID: 3475096287183142924, guid: 0bcd7ecfc8ce9fc468c9102698c786b0, type: 3}
     - target: {fileID: 4910204087872978347, guid: 3e6714a97e35be24a9ae4c244d27cbd5, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4910204087872978347, guid: 3e6714a97e35be24a9ae4c244d27cbd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -874,7 +894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5273522467631997323, guid: 865f1a5f172f75e4499b57444d9ef0e6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5273522467631997323, guid: 865f1a5f172f75e4499b57444d9ef0e6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -963,7 +983,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6252001865216136009, guid: 6e981708b5b2148488f55853f1a06b75, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6252001865216136009, guid: 6e981708b5b2148488f55853f1a06b75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1007,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6252001865216136010, guid: 6e981708b5b2148488f55853f1a06b75, type: 3}
       propertyPath: m_Name
-      value: Spawner
+      value: Wave Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e981708b5b2148488f55853f1a06b75, type: 3}
