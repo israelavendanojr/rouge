@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2143354748}
   - component: {fileID: 2143354746}
   - component: {fileID: 3652524346472989345}
+  - component: {fileID: 3388453276437518971}
   m_Layer: 0
   m_Name: Follower
   m_TagString: Target
@@ -187,3 +188,23 @@ MonoBehaviour:
   budget: 1
   spawnAtThisPosition: 1
   customSpawnPoint: {fileID: 0}
+--- !u!95 &3388453276437518971
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486137826005618276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80392a85e6a91de498b23ae241f295dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

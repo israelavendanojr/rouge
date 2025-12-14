@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313473f14f92b02448fa05c902a5ccc2, type: 3}
   m_Name: Pound
   m_EditorClassIdentifier: 
-  segmentColor: {r: 1, g: 0.76470596, b: 0.5176471, a: 1}
-  segmentSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  segmentColor: {r: 1, g: 1, b: 1, a: 1}
+  segmentSprite: {fileID: -924227998, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
   segmentName: Data Pound
   description: Hurt near enemies
   spawnPrefab: {fileID: 4525442372378661998, guid: 949fc5de5b462ea44983708f09de854d, type: 3}

@@ -37,9 +37,6 @@ public class EnemyFollowState : State
         {
             Vector2 direction = (currentTargetPos - (Vector2)enemy.transform.position).normalized;
             rb.velocity = direction * moveSpeed;
-
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            enemy.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
         }
         else
         {
