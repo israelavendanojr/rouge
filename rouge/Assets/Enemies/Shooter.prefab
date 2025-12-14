@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cc46794302b74087b3ae585f13811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 2
   currentHealth: 0
   OnDamaged: {fileID: 0}
   OnHealed: {fileID: 0}
@@ -208,10 +208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 0}
   retreatSpeed: 3
-  minDistanceFromPlayer: 6
-  maxDistanceFromPlayer: 10
+  minDistanceFromPlayer: 3
+  maxDistanceFromPlayer: 8
   fireballPrefab: {fileID: 4525442372378661998, guid: d17b313665f9e5a46ab8bbebe2bfe1c6, type: 3}
-  fireRate: 1
+  fireRate: 1.5
   shotsPerVolley: 2
   minRepositionDistance: 15
   spawnPoint: {fileID: 2120000119335573524}

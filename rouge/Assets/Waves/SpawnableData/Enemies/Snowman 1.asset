@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Snowman 1
   m_EditorClassIdentifier: 
   prefab: {fileID: 6486137826005618276, guid: f6fe922ddc370044fb8408792678616d, type: 3}
-  cost: 3
+  cost: 4
   spawnWeight: 1

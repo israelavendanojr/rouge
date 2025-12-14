@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject player;
+    [SerializeField] private StatData statData;
+    [SerializeField] private int wave = 0;
+
+    [SerializeField] private int score = 0;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
