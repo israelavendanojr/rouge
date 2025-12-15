@@ -7,10 +7,12 @@ public class Segment : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     
     public SegmentData Data => _data;
+    private GameManager _gameManager;
 
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     public void Initialize(SegmentData data)
@@ -34,7 +36,7 @@ public class Segment : MonoBehaviour
     public void Consume()
     {
         // Debug.Log($"Consumed segment: {_data.segmentName}");
-        _data.OnConsume(transform.position, transform.rotation);
+        _data.OnConsume(transform.position, transform.rotation, _gameManager.GetStatData().level);
     }
 
     private void OnValidate()

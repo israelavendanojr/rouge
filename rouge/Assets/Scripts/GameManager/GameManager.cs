@@ -8,6 +8,7 @@ public class GameManager : StateMachine
     [SerializeField] private GameObject player;
     public GameObject GetPlayer() => player;
     [SerializeField] private StatData statData;
+    public StatData GetStatData() => statData;
     [Header("Start Data")]
     [SerializeField] private InputActionReference startAction;
     public InputActionReference GetStartAction() => startAction;
@@ -16,14 +17,18 @@ public class GameManager : StateMachine
     private WaveSpawner waveSpawner;
     public WaveSpawner GetWaveSpawner() => waveSpawner;
     [SerializeField] private int wave = 1;
+    [SerializeField] private GameEvent onWaveStarted;
     [SerializeField] private float waitTime = 5;
     public float GetWaitTime() => waitTime;
     [SerializeField] private int shopFrequency = 1;
     public int GetShopFrequency() => shopFrequency;
     [SerializeField] private float shopTime = 5;
     public float GetShopTime() => shopTime;
+    [SerializeField] private GameObject shopPrefab;
+    public GameObject GetShopPrefab() => shopPrefab;
+    public int GetLevel() => statData.GetLevel();
 
-    [SerializeField] private GameEvent onWaveStarted;
+
     
     [Header("Score Data")]
     [SerializeField] private int score = 0;
@@ -46,6 +51,8 @@ public class GameManager : StateMachine
             onScoreUpdated.Raise();
 
         waveSpawner = FindObjectOfType<WaveSpawner>();
+
+        statData.InitializeStats();
     }
 
     public void RestartGame()

@@ -4,13 +4,15 @@ using UnityEngine;
 public class SpawnerSegmentData : SegmentData
 {
     [Header("Spawner Settings")]
-    public GameObject spawnPrefab;
+    public GameObject[] spawnPrefabs;
     
-    public override void OnConsume(Vector3 position, Quaternion rotation)
+    public override void OnConsume(Vector3 position, Quaternion rotation, int level)
     {
-        if (spawnPrefab != null)
+        GameObject prefab = spawnPrefabs[level - 1];
+        Quaternion uprightRotation = Quaternion.identity;
+        if (prefab != null)
         {
-            Instantiate(spawnPrefab, position, rotation);
+            Instantiate(prefab, position, Quaternion.identity);
         }
         else
         {

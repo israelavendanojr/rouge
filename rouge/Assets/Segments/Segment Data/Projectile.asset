@@ -15,6 +15,9 @@ MonoBehaviour:
   segmentColor: {r: 1, g: 1, b: 1, a: 1}
   segmentSprite: {fileID: -532062451, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
   segmentIcon: {fileID: -1373174984, guid: 1ede86db34e2bb14b9d5438f97eed031, type: 3}
-  segmentName: Piercing Malware
+  segmentName: Present Pass
   description: Projectile
-  spawnPrefab: {fileID: 4525442372378661998, guid: 01c5000bccd9c114fa548f231135fb2d, type: 3}
+  spawnPrefabs:
+  - {fileID: 4525442372378661998, guid: 06a32dd5d688f8044b0ce4a29a3e9613, type: 3}
+  - {fileID: 4525442372378661998, guid: 1b0e7eca4592a61468498b2229347c3d, type: 3}
+  - {fileID: 4525442372378661998, guid: 01c5000bccd9c114fa548f231135fb2d, type: 3}

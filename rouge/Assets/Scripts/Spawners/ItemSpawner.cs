@@ -18,6 +18,7 @@ public class ItemSpawner : MonoBehaviour
     void Awake()
     {
         healthComponent = GetComponent<HealthComponent>();
+        spawnableItems = FindObjectOfType<GameManager>().GetStatData().currentSegments.ToArray();
     }
     
     void Start()

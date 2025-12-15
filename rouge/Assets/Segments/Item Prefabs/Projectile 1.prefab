@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 8559347547164273840}
   - component: {fileID: 3328243229890126146}
   - component: {fileID: -719033842973922844}
+  - component: {fileID: -1238101864655361088}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Target
-  speed: 20
+  speed: 10
   rotationSpeed: 1
   damage: 1
 --- !u!114 &3328243229890126146
@@ -160,3 +161,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayInSeconds: 5
+--- !u!114 &-1238101864655361088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70116995a3925854e8a92bd609cc2358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 11400000, guid: 27393d14af22ab647be3565773c2e740, type: 2}

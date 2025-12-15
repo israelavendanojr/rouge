@@ -36,6 +36,8 @@ public class SnakeSegments : MonoBehaviour
             if (_healthComponent.OnDamaged != null)
                 _healthComponent.OnDamaged.RegisterListener(GetComponent<GameEventListener>());
         }
+
+        maxSegments = _gameManager.GetStatData().segmentCapacity;
     }
 
     private void Start()
@@ -250,5 +252,10 @@ public class SnakeSegments : MonoBehaviour
         {
             Gizmos.DrawLine(_positionHistory[i], _positionHistory[i + 1]);
         }
+    }
+
+    public void UpdateSegmentCapacity()
+    {
+        maxSegments = _gameManager.GetStatData().segmentCapacity;
     }
 }

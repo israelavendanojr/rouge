@@ -1,9 +1,11 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Spawnable : MonoBehaviour
 {
     [Header("Spawn Pool")]
-    public SpawnableData[] spawnableItems;
+    [SerializeField] private List<SpawnableData> spawnableItems;
     
     [Header("Spawn Budget")]
     public int budget = 50;
@@ -17,11 +19,15 @@ public class Spawnable : MonoBehaviour
     void Awake()
     {
         remainingBudget = budget;
+        
+        StatData statData = FindObjectOfType<GameManager>().GetStatData();
+        spawnableItems = statData.currentSegments;
+
     }
     
     public void SpawnAll()
     {
-        while (remainingBudget > 0 && spawnableItems.Length > 0)
+        while (remainingBudget > 0 && spawnableItems.Count > 0)
         {
             SpawnableData item = GetWeightedRandomItem();
             
@@ -39,7 +45,7 @@ public class Spawnable : MonoBehaviour
     
     public bool SpawnOne()
     {
-        if (remainingBudget <= 0 || spawnableItems.Length == 0)
+        if (remainingBudget <= 0 || spawnableItems.Count == 0)
             return false;
         
         SpawnableData item = GetWeightedRandomItem();
@@ -56,7 +62,7 @@ public class Spawnable : MonoBehaviour
     
     public bool SpawnByIndex(int index)
     {
-        if (index < 0 || index >= spawnableItems.Length)
+        if (index < 0 || index >= spawnableItems.Count)
             return false;
         
         SpawnableData item = spawnableItems[index];
@@ -93,7 +99,7 @@ public class Spawnable : MonoBehaviour
     
     SpawnableData GetWeightedRandomItem()
     {
-        if (spawnableItems.Length == 0) return null;
+        if (spawnableItems.Count == 0) return null;
         
         float totalWeight = 0f;
         foreach (SpawnableData item in spawnableItems)

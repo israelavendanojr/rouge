@@ -4,6 +4,7 @@ public class GameShopState : State
 {
     private float shopTime;               
     private GameManager _gameManager;
+    GameObject shop;
 
     public GameShopState(StateMachine stateMachine) : base(stateMachine)
     {
@@ -13,6 +14,7 @@ public class GameShopState : State
 
     public override void Enter()
     {
+        shop = GameObject.Instantiate(_gameManager.GetShopPrefab());
     }
 
     public override void Update()
@@ -22,6 +24,7 @@ public class GameShopState : State
         if (shopTime <= 0f)
         {
             shopTime = 0f;
+            GameObject.Destroy(shop);
             _gameManager.SetState(new GameWaveState(_gameManager));
         }
     }

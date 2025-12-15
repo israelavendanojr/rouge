@@ -19,7 +19,8 @@ public class UpdateValueUI : MonoBehaviour
     public enum ValueType
     {
         Wave,
-        Score
+        Score,
+        Level,
     }
     
     void Awake()
@@ -48,7 +49,24 @@ public class UpdateValueUI : MonoBehaviour
         if (gameManager == null || textComponent == null)
             return;
         
-        int value = valueType == ValueType.Wave ? gameManager.GetWave() : gameManager.GetScore();
+        int value = 0;
+
+       switch (valueType)
+    {
+        case ValueType.Wave:
+            value = gameManager.GetWave();
+            break;
+        case ValueType.Score:
+            value = gameManager.GetScore();
+            break;
+        case ValueType.Level:
+            value = gameManager.GetLevel(); 
+            break;
+        default:
+            Debug.LogError($"Unhandled ValueType: {valueType}");
+            return;
+    }
+
         textComponent.text = $"{prefix}{value}{suffix}";
     }
 }

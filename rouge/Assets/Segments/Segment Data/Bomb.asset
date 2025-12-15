@@ -15,6 +15,9 @@ MonoBehaviour:
   segmentColor: {r: 1, g: 1, b: 1, a: 1}
   segmentSprite: {fileID: 662853963, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
   segmentIcon: {fileID: -496158948, guid: 1ede86db34e2bb14b9d5438f97eed031, type: 3}
-  segmentName: Encryption Bomb
+  segmentName: Gift Bomb
   description: AOE
-  spawnPrefab: {fileID: 4525442372378661998, guid: 7e45421e4f108c44288d8e6ba3401780, type: 3}
+  spawnPrefabs:
+  - {fileID: 4525442372378661998, guid: b1f2c525545f2bb42a7166bcf5b2c69b, type: 3}
+  - {fileID: 4525442372378661998, guid: 7e45421e4f108c44288d8e6ba3401780, type: 3}
+  - {fileID: 4525442372378661998, guid: 7330cf557774a8040adfc3b782cd1c40, type: 3}

@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1cb0cf8ea82304299016df9bd1431d, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  segmentTypes: []
-  level: 1
-  maxCapacity: 1
+  currentSegments:
+  - {fileID: 11400000, guid: a652a36f3f97e4a40bd4fa715dda5c5e, type: 2}
+  segmentTypes:
+  - {fileID: 11400000, guid: 11f0ea6e674f0a34893b68058592de53, type: 2}
+  - {fileID: 11400000, guid: 157d725e5f69c7b42a2a69dec4927a4a, type: 2}
+  - {fileID: 11400000, guid: a652a36f3f97e4a40bd4fa715dda5c5e, type: 2}
+  level: 3
+  segmentCapacity: 1

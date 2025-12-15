@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1705267894705854621}
   - component: {fileID: 7273985928240980414}
   m_Layer: 0
-  m_Name: Pound
+  m_Name: Bomb 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -924227998, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50750b08181087b4f910a48811062bd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.41
+  m_Radius: 4
 --- !u!114 &7273985928240980414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ea3653fe70722429e69390acf141a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuseTime: 0
+  fuseTime: 1.5
+  damage: 2
   explosionCollider: {fileID: 1705267894705854621}
   targetTag: Target
+  explosionSound: {fileID: 11400000, guid: 2289b4b7c745fce4ca4c5c868077c216, type: 2}

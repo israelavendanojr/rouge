@@ -33,5 +33,6 @@ public class ConsumeSegment : MonoBehaviour
     {
         // Consuming costs health (segment = health)
         _snakeSegments.ConsumeLastSegment();
+
     }
 }

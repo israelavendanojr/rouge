@@ -8,6 +8,7 @@ public class Bomb : MonoBehaviour
 
     [SerializeField] private CircleCollider2D explosionCollider;
     [SerializeField] private string targetTag = "Target";
+    [SerializeField] SimpleAudioEvent explosionSound;
     
     private float _spawnTime;
 
@@ -31,6 +32,8 @@ public class Bomb : MonoBehaviour
 
     private void Explode()
     {
+        explosionSound?.Play();
+        
         if (explosionCollider != null)
         {
             explosionCollider.enabled = true;

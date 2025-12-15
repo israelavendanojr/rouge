@@ -5,24 +5,19 @@ using UnityEngine.UI;
 public class UpdateSegmentInventoryUI : MonoBehaviour
 {
     [Header("References")]
-    private SnakeSegments snakeSegments;
+    [SerializeField] private StatData statData; 
     [SerializeField] private GameObject segmentIconPrefab;
     
     [Header("Layout Settings")]
-    [SerializeField] private bool reverseOrder = false; // True = bottom-to-top display
+    [SerializeField] private bool reverseOrder = true; 
     
     private List<GameObject> spawnedIcons = new List<GameObject>();
     
     void Awake()
     {
-        if (snakeSegments == null)
+        if (statData == null)
         {
-            snakeSegments = FindObjectOfType<SnakeSegments>();
-            
-            if (snakeSegments == null)
-            {
-                Debug.LogError("UpdateSegmentInventoryUI: SnakeSegments not found!");
-            }
+            Debug.LogError("UpdateSegmentInventoryUI: Stat Data ScriptableObject not assigned! Please assign the StatData asset in the Inspector.");
         }
         
         if (segmentIconPrefab == null)
@@ -38,7 +33,7 @@ public class UpdateSegmentInventoryUI : MonoBehaviour
     
     public void UpdateDisplay()
     {
-        if (snakeSegments == null || segmentIconPrefab == null)
+        if (statData == null || segmentIconPrefab == null)
             return;
         
         // Clear existing icons
@@ -49,27 +44,33 @@ public class UpdateSegmentInventoryUI : MonoBehaviour
         }
         spawnedIcons.Clear();
         
-        // Get current segments
-        List<Segment> segments = snakeSegments.GetSegments();
+        List<SpawnableData> segmentsToDisplay = statData.currentSegments;
         
-        // Create icons for each segment
-        List<Segment> displaySegments = reverseOrder ? segments : new List<Segment>(segments);
+        if (segmentsToDisplay == null)
+            return;
+
+        List<SpawnableData> displayList = new List<SpawnableData>(segmentsToDisplay);
+
         if (!reverseOrder)
-            displaySegments.Reverse(); // Show last-added at top
-        
-        foreach (Segment segment in displaySegments)
         {
-            if (segment == null || segment.Data == null)
+            // Reverse the list so the last element (latest segment type added) is iterated over first
+            displayList.Reverse(); 
+        }
+
+        // Create icons for each segment type
+        foreach (SpawnableData segmentData in displayList)
+        {
+            if (segmentData == null)
                 continue;
             
             GameObject iconObj = Instantiate(segmentIconPrefab, transform);
             
-            // Set the icon sprite
             Image iconImage = iconObj.GetComponent<Image>();
-            if (iconImage != null && segment.Data.segmentIcon != null)
+
+            if (iconImage != null && segmentData.segmentIcon != null)
             {
-                iconImage.sprite = segment.Data.segmentIcon;
-                iconImage.color = segment.Data.segmentColor;
+                iconImage.sprite = segmentData.segmentIcon;
+                iconImage.color = segmentData.segmentColor; 
             }
             
             spawnedIcons.Add(iconObj);

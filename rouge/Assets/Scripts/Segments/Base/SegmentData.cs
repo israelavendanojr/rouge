@@ -13,7 +13,7 @@ public class SegmentData : ScriptableObject
     [TextArea(2, 4)]
     public string description;
 
-    public virtual void OnConsume(Vector3 position, Quaternion rotation)
+    public virtual void OnConsume(Vector3 position, Quaternion rotation, int level)
     {
         // Base implementation - override in derived classes
     }
