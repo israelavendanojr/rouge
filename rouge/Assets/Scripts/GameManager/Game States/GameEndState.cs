@@ -1,25 +1,48 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameEndState : State
 {
+    private InputAction _respawnAction;
+    private GameManager _gameManager;
+    private GameObject _player;
+
     public GameEndState(StateMachine stateMachine) : base(stateMachine)
     {
+        _gameManager = stateMachine as GameManager;
+        _player = _gameManager.GetPlayer();
     }
 
     public override void Enter()
     {
-        Debug.Log("Entered Game End State");
-        // Logic for displaying the game over screen, final score, high score submission
+        // Disable player control
+        _player.GetComponent<MouseFollower>().enabled = false;
+        _player.GetComponent<ConsumeSegment>().enabled = false;
+
+        
+        _respawnAction = _gameManager.GetInteractAction().action;
+        _respawnAction.Enable();
     }
 
     public override void Update()
     {
-        // Listen for "Restart" or "Quit" input
+        if (_respawnAction.WasPressedThisFrame())
+        {
+            _gameManager.RestartGame();
+            
+        }
     }
 
     public override void Exit()
     {
-        Debug.Log("Exiting Game End State");
-        // Any final cleanup before loading a new scene
+        if (_respawnAction != null)
+        {
+            _respawnAction.Disable();
+            _respawnAction.Dispose();
+        }
+
+        // Re-enable player control
+        _player.GetComponent<MouseFollower>().enabled = true;
+        _player.GetComponent<ConsumeSegment>().enabled = true;
     }
 }

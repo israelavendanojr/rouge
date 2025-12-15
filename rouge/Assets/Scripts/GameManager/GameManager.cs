@@ -10,8 +10,8 @@ public class GameManager : StateMachine
     [SerializeField] private StatData statData;
     public StatData GetStatData() => statData;
     [Header("Start Data")]
-    [SerializeField] private InputActionReference startAction;
-    public InputActionReference GetStartAction() => startAction;
+    [SerializeField] private InputActionReference interactAction;
+    public InputActionReference GetInteractAction() => interactAction;
     
     [Header("Wave Data")]
     private WaveSpawner waveSpawner;

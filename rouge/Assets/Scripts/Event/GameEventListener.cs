@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +13,20 @@ public class GameEventListener : MonoBehaviour
     { Event.UnregisterListener(this); }
 
     public void OnEventRaised()
-    { Response.Invoke(); }
+    { 
+
+        if (this == null)
+        {
+            return;
+        }
+
+        if (Response != null)
+        {
+            Response.Invoke();
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning($"GameEventListener on {gameObject.name} has a null Response field.", this);
+        } }
 
 }

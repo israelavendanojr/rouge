@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2143354748}
   - component: {fileID: 2143354746}
   - component: {fileID: 3652524346472989345}
+  - component: {fileID: 5166511751715100477}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Target
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 0}
+  scoreValue: 1
   moveSpeed: 1.5
   damage: 1
 --- !u!114 &3652524346472989345
@@ -208,3 +210,19 @@ MonoBehaviour:
   budget: 1
   spawnAtThisPosition: 1
   customSpawnPoint: {fileID: 0}
+--- !u!114 &5166511751715100477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486137826005618276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a6dee01856efb449cc5680edbe2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: ed59388ff3c75fa4c9bee5776929b534, type: 2}
+  flashDuration: 0.1
+  invulnerabilityDuration: 0.5
+  flashSound: {fileID: 11400000, guid: f084659889e40b546ad946955e4c755e, type: 2}

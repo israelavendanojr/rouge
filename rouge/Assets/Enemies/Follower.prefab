@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 6486137826005618279}
   - component: {fileID: 6486137826005618273}
   - component: {fileID: 2143354747}
+  - component: {fileID: 3388453276437518971}
   - component: {fileID: 2143354748}
   - component: {fileID: 2143354746}
   - component: {fileID: 3652524346472989345}
-  - component: {fileID: 3388453276437518971}
+  - component: {fileID: 6283035672591179831}
   m_Layer: 0
   m_Name: Follower
   m_TagString: Target
@@ -137,6 +138,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &3388453276437518971
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486137826005618276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80392a85e6a91de498b23ae241f295dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &2143354748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 0}
+  scoreValue: 1
   moveSpeed: 7
   damage: 1
 --- !u!114 &3652524346472989345
@@ -188,23 +210,19 @@ MonoBehaviour:
   budget: 1
   spawnAtThisPosition: 1
   customSpawnPoint: {fileID: 0}
---- !u!95 &3388453276437518971
-Animator:
-  serializedVersion: 5
+--- !u!114 &6283035672591179831
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6486137826005618276}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 80392a85e6a91de498b23ae241f295dc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a6dee01856efb449cc5680edbe2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: ed59388ff3c75fa4c9bee5776929b534, type: 2}
+  flashDuration: 0.1
+  invulnerabilityDuration: 0.5
+  flashSound: {fileID: 11400000, guid: f084659889e40b546ad946955e4c755e, type: 2}

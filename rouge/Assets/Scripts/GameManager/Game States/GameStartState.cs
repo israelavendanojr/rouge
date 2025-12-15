@@ -19,7 +19,7 @@ public class GameStartState : State
         _player.GetComponent<MouseFollower>().enabled = false;
         _player.GetComponent<ConsumeSegment>().enabled = false;
         
-        _startAction = _gameManager.GetStartAction().action;
+        _startAction = _gameManager.GetInteractAction().action;
         _startAction.Enable();
     }
 

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7589912727964111561}
   - component: {fileID: 3514737869646240835}
   - component: {fileID: 8003386300898255174}
+  - component: {fileID: 1166582531053196823}
   m_Layer: 0
   m_Name: Dasher
   m_TagString: Target
@@ -149,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cc46794302b74087b3ae585f13811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 2
   currentHealth: 0
   OnDamaged: {fileID: 0}
   OnHealed: {fileID: 0}
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 0}
+  scoreValue: 1
   dashForce: 12
   dashDuration: 0.7
   stopDuration: 1
@@ -211,3 +213,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1166582531053196823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137347831130447372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a6dee01856efb449cc5680edbe2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: ed59388ff3c75fa4c9bee5776929b534, type: 2}
+  flashDuration: 0.1
+  invulnerabilityDuration: 0.5
+  flashSound: {fileID: 11400000, guid: f084659889e40b546ad946955e4c755e, type: 2}

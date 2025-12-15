@@ -11,6 +11,7 @@ public class HitFlashEffect : MonoBehaviour
     [Header("Settings")]
     public float flashDuration = 0.1f;
     public float invulnerabilityDuration = 0.5f;
+    public SimpleAudioEvent flashSound;
 
     private Material originalMaterial;
     private Collider2D triggerCollider;
@@ -44,6 +45,8 @@ public class HitFlashEffect : MonoBehaviour
 
     private IEnumerator FlashRoutine()
     {
+        flashSound?.Play();
+
         triggerCollider.enabled = false;
         if (flashMaterial != null)
         {

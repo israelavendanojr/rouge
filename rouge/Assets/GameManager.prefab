@@ -47,11 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   statData: {fileID: 11400000, guid: 35cd8c930ea8a604b83af80278780054, type: 2}
-  startAction: {fileID: 3475096287183142924, guid: 0bcd7ecfc8ce9fc468c9102698c786b0, type: 3}
+  interactAction: {fileID: 3475096287183142924, guid: 0bcd7ecfc8ce9fc468c9102698c786b0, type: 3}
   wave: 0
-  waitTime: 10
-  shopTime: 5
   onWaveStarted: {fileID: 11400000, guid: 1b5da773dd6411947bb58ddcd60c7cac, type: 2}
+  waitTime: 10
+  shopFrequency: 1
+  shopTime: 5
+  shopPrefab: {fileID: 4404560361968110899, guid: 3157c02de4c4dea4d807ae9b58bb137e, type: 3}
   score: 0
   onScoreUpdated: {fileID: 11400000, guid: 6a8244a8c1d0f594db13f1aee2b4c3fa, type: 2}
 --- !u!114 &4910204087872978346

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3898031522905998102}
   - component: {fileID: 3898031522905998101}
   - component: {fileID: 3898031522905998100}
+  - component: {fileID: 3226389414997079089}
   m_Layer: 0
   m_Name: Upgrade
   m_TagString: Untagged
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.62102604, b: 0, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -455758154, guid: 00871167e1e14c34d9aa7cb432b8bb3a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -128,3 +129,23 @@ MonoBehaviour:
   upgradeType: 2
   amount: 1
   onUpgrade: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+--- !u!95 &3226389414997079089
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898031522905998098}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe1baa3c5b47c2f4d9a9542740b5802c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
