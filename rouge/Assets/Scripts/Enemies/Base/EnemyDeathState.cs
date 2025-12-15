@@ -14,7 +14,7 @@ public class EnemyDeathState : State
         
         enemy.GetSpawnable().SpawnOne();
         enemy.GetGameManager().AddScore(enemy.GetScoreValue() * enemy.GetGameManager().GetWave());
-        GameObject.Destroy(enemy.gameObject, 0f); 
+        GameObject.Destroy(enemy.gameObject, 0); 
     }
 
     public override void Update()

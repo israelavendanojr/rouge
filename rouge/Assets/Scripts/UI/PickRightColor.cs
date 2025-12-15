@@ -54,13 +54,13 @@ public class PickRightColor : MonoBehaviour
         switch (selectedColor)
         {
             case OrnamentColor.Red:
-                animator.Play("ornament_red");
+                animator.Play("Red");
                 break;
             case OrnamentColor.Green:
-                animator.Play("ornament_green");
+                animator.Play("Green");
                 break;
             case OrnamentColor.Blue:
-                animator.Play("ornament_blue");
+                animator.Play("Blue");
                 break;
         }
     }

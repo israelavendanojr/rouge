@@ -119,3 +119,4 @@ MonoBehaviour:
   explosionCollider: {fileID: 1705267894705854621}
   targetTag: Target
   explosionSound: {fileID: 11400000, guid: 2289b4b7c745fce4ca4c5c868077c216, type: 2}
+  particles: {fileID: 6990475374211065062, guid: 0d1ea34df054c644d84cdc67face6e40, type: 3}

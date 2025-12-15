@@ -114,8 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ea3653fe70722429e69390acf141a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuseTime: 0.5
+  fuseTime: 0
   damage: 2
   explosionCollider: {fileID: 1705267894705854621}
   targetTag: Target
   explosionSound: {fileID: 11400000, guid: 6e67120ee07a8734582b38ff50e1f704, type: 2}
+  particles: {fileID: 6990475374211065062, guid: 0d1ea34df054c644d84cdc67face6e40, type: 3}

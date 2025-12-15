@@ -13,13 +13,15 @@ GameObject:
   - component: {fileID: 4525442372378662006}
   - component: {fileID: 4525442372378661995}
   - component: {fileID: 4525442372378661994}
+  - component: {fileID: 2045145570}
   - component: {fileID: 4525442372378661997}
   - component: {fileID: 4525442372378661992}
   - component: {fileID: 650731248584407330}
   - component: {fileID: 1473375797}
   - component: {fileID: 1473375798}
+  - component: {fileID: 1776369990}
   - component: {fileID: 4998644401499172950}
-  - component: {fileID: 2045145570}
+  - component: {fileID: 1776369989}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -171,6 +173,26 @@ MonoBehaviour:
   m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &2045145570
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bafbcc12239bddf4aaeea0e81160db28, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &4525442372378661997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +239,7 @@ MonoBehaviour:
   maxSegments: 1
   _segments: []
   onUpdate: {fileID: 11400000, guid: 37d2cb2a8d27d5c4bb5cd2c46f769f99, type: 2}
+  pickupSound: {fileID: 0}
   showDebugInfo: 0
 --- !u!114 &1473375797
 MonoBehaviour:
@@ -247,9 +270,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
-  OnDamaged: {fileID: 11400000, guid: 4658aef93faac4e48aaa1f321a359c04, type: 2}
+  OnDamaged: {fileID: 11400000, guid: 100d7b7fdeca9ef4da352af586d88cac, type: 2}
   OnHealed: {fileID: 11400000, guid: f384e66aa9d55ee4d81f7bfc61c3b1da, type: 2}
   OnDeath: {fileID: 11400000, guid: 6ad427daa2ad2c3409cd62f92cbc5796, type: 2}
+--- !u!114 &1776369990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a6dee01856efb449cc5680edbe2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: ed59388ff3c75fa4c9bee5776929b534, type: 2}
+  flashDuration: 0.1
 --- !u!114 &4998644401499172950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 4658aef93faac4e48aaa1f321a359c04, type: 2}
+  Event: {fileID: 11400000, guid: 100d7b7fdeca9ef4da352af586d88cac, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -278,23 +315,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!95 &2045145570
-Animator:
-  serializedVersion: 5
+--- !u!114 &1776369989
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4525442372378661998}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bafbcc12239bddf4aaeea0e81160db28, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 650731248584407330}
+        m_TargetAssemblyTypeName: SnakeSegments, Assembly-CSharp
+        m_MethodName: UpdateSegmentCapacity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -13,9 +13,12 @@ public class HealthComponent : MonoBehaviour
     
     public GameEvent OnDeath;
 
+    private HitFlashEffect _hitFlashEffect;
+
     private void Awake()
     {
         currentHealth = maxHealth;
+        _hitFlashEffect = GetComponent<HitFlashEffect>();
     }
 
     public int GetCurrentHealth() => currentHealth;
@@ -37,9 +40,11 @@ public class HealthComponent : MonoBehaviour
         }
         else
         {
-            if (OnDamaged != null)
-                OnDamaged.Raise();
+            
+            OnDamaged?.Raise();
         }
+
+        _hitFlashEffect?.Flash();
     }
     
     public void Heal(int amount)

@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     
     [Header("Projectile Stats")]
     [SerializeField] private int damage = 1;
+    [SerializeField] private GameObject exitParticleEffect;
 
     [Header("Components")]
     private HealthComponent health;
@@ -98,6 +99,10 @@ public class Projectile : MonoBehaviour
 
             if (health.GetCurrentHealth() <= 0)
             {
+                if (exitParticleEffect != null)
+                {
+                    Instantiate(exitParticleEffect, transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
             }
         }    

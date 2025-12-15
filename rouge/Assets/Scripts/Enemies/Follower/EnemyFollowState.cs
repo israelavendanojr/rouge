@@ -68,7 +68,6 @@ public class EnemyFollowState : State
             if (targetHealth != null)
             {
                 targetHealth.TakeDamage(damage);
-                // enemy.healthComponent.TakeDamage(1);
             }
 
         }    

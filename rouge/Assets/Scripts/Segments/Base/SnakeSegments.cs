@@ -101,6 +101,7 @@ public class SnakeSegments : MonoBehaviour
 
         if (onUpdate != null)
             onUpdate.Raise();
+
     }
 
     public void AddSegment(SegmentData data)
@@ -158,6 +159,8 @@ public class SnakeSegments : MonoBehaviour
         {
             Debug.Log($"Added: {data.segmentName}. Total: {_segments.Count}");
         }
+
+
     }
 
     public void ConsumeFirstSegment()
@@ -212,7 +215,7 @@ public class SnakeSegments : MonoBehaviour
     {
         if (_segments.Count == 0)
         {
-            Debug.Log("No segments to remove!");
+            // Debug.Log("No segments to remove!");
             return;
         }
 
