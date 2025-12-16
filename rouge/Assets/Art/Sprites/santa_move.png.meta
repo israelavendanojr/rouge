@@ -122,10 +122,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: santa_move_1
       rect:
         serializedVersion: 2
-        x: 8
+        x: 16
         y: 0
-        width: 8
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: santa_move_2
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 0
-        width: 8
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,6 +175,27 @@ TextureImporter:
       bones: []
       spriteID: b13c519223c88e649b8a9c723866dfb7
       internalID: -754595853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: santa_move_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae91cbca154ec5f42b6c045d44ecb8a4
+      internalID: -1366278875
       vertices: []
       indices: 
       edges: []
@@ -193,6 +214,7 @@ TextureImporter:
       santa_move_0: -1794622397
       santa_move_1: -482810511
       santa_move_2: -754595853
+      santa_move_3: -1366278875
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

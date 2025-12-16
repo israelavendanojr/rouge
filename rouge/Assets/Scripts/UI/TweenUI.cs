@@ -1,123 +1,207 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using System;
 
 public class TweenUI : MonoBehaviour
 {
-    public enum AnimationType
+    public enum TweenType
     {
-        Fade,
         Move,
-        Scale
+        Scale,
+        Fade,
+        Rotate
     }
 
-    [Header("References")]
-    public GameObject objectToAnimate;
+    public enum PlayMode
+    {
+        Manual,
+        OnEnable,
+        OnDisable
+    }
 
-    [Header("Animation Settings")]
-    public AnimationType animationType;
-    public float duration = 0.25f;
-    public float delay = 0f;
-    public bool loop;
-    public bool pingPong;
+    [Serializable]
+    public class TweenData
+    {
+        public TweenType tweenType;
 
-    [Header("Position / Scale")]
-    public bool startPositionOffset;
-    public Vector3 from;
-    public Vector3 to;
+        [Header("Values")]
+        public Vector3 from;
+        public Vector3 to;
+        public bool useFrom = true;
+        public bool relative;
 
-    [Header("Auto Play")]
-    public bool showOnEnable;
-    public bool workOnDisable;
+        [Header("Timing")]
+        public float duration = 0.3f;
+        public float delay = 0f;
+
+        [Header("Ease")]
+        public LeanTweenType easeType = LeanTweenType.easeOutQuad;
+
+        [Header("Loop")]
+        public bool loop;
+        public bool pingPong;
+
+        [Header("Events")]
+        public UnityEvent onComplete;
+    }
+
+    [Header("Target")]
+    public GameObject target;
+
+    [Header("Tweens")]
+    public TweenData[] tweens;
+
+    [Header("Playback")]
+    public PlayMode playMode = PlayMode.Manual;
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    private int tweenId = -1;
 
     private void Awake()
     {
-        if (objectToAnimate == null)
-            objectToAnimate = gameObject;
+        if (target == null)
+            target = gameObject;
 
-        rectTransform = objectToAnimate.GetComponent<RectTransform>();
-        canvasGroup = objectToAnimate.GetComponent<CanvasGroup>();
+        rectTransform = target.GetComponent<RectTransform>();
 
-        if (animationType == AnimationType.Fade && canvasGroup == null)
-            canvasGroup = objectToAnimate.AddComponent<CanvasGroup>();
+        if (NeedsCanvasGroup())
+            canvasGroup = target.GetComponent<CanvasGroup>() ?? target.AddComponent<CanvasGroup>();
     }
 
     private void OnEnable()
     {
-        if (showOnEnable)
+        if (playMode == PlayMode.OnEnable)
             PlayForward();
     }
 
     private void OnDisable()
     {
-        if (workOnDisable)
+        if (playMode == PlayMode.OnDisable)
             PlayBackward();
     }
 
+    // =============================
+    // PUBLIC API
+    // =============================
+
     public void PlayForward()
     {
-        LeanTween.cancel(objectToAnimate);
-        ApplyFromState();
-        CreateTween(from, to);
+        PlayTweens(forward: true);
     }
 
     public void PlayBackward()
     {
-        LeanTween.cancel(objectToAnimate);
-        CreateTween(to, from);
+        PlayTweens(forward: false);
     }
 
-    private void ApplyFromState()
+    public void Toggle()
     {
-        if (!startPositionOffset)
-            return;
+        PlayForward();
+    }
 
-        switch (animationType)
+    // =============================
+    // CORE LOGIC
+    // =============================
+
+    private void PlayTweens(bool forward)
+    {
+        LeanTween.cancel(target);
+
+        foreach (TweenData tween in tweens)
         {
-            case AnimationType.Move:
-                rectTransform.anchoredPosition = from;
-                break;
-
-            case AnimationType.Scale:
-                rectTransform.localScale = from;
-                break;
-
-            case AnimationType.Fade:
-                canvasGroup.alpha = from.x;
-                break;
+            CreateTween(tween, forward);
         }
     }
 
-    private void CreateTween(Vector3 start, Vector3 end)
+    private void CreateTween(TweenData data, bool forward)
     {
+        Vector3 start = forward ? data.from : data.to;
+        Vector3 end = forward ? data.to : data.from;
+
+        if (data.useFrom)
+            ApplyFromState(data, start);
+
         LTDescr tween = null;
 
-        switch (animationType)
+        switch (data.tweenType)
         {
-            case AnimationType.Move:
-                tween = LeanTween.move(rectTransform, end, duration);
+            case TweenType.Move:
+                tween = LeanTween.move(
+                    rectTransform,
+                    data.relative ? rectTransform.anchoredPosition + (Vector2)end : end,
+                    data.duration
+                );
                 break;
 
-            case AnimationType.Scale:
-                tween = LeanTween.scale(objectToAnimate, end, duration);
+            case TweenType.Scale:
+                tween = LeanTween.scale(
+                    target,
+                    data.relative ? target.transform.localScale + end : end,
+                    data.duration
+                );
                 break;
 
-            case AnimationType.Fade:
-                tween = LeanTween.alphaCanvas(canvasGroup, end.x, duration);
+            case TweenType.Rotate:
+                tween = LeanTween.rotate(
+                    target,
+                    data.relative ? target.transform.eulerAngles + end : end,
+                    data.duration
+                );
+                break;
+
+            case TweenType.Fade:
+                tween = LeanTween.alphaCanvas(
+                    canvasGroup,
+                    end.x,
+                    data.duration
+                );
                 break;
         }
 
-        if (tween == null)
-            return;
+        if (tween == null) return;
 
-        tween.setDelay(delay);
+        tween.setDelay(data.delay)
+             .setEase(data.easeType);
 
-        if (pingPong)
+        if (data.pingPong)
             tween.setLoopPingPong();
-        else if (loop)
+        else if (data.loop)
             tween.setLoopClamp();
+
+        if (data.onComplete != null)
+            tween.setOnComplete(data.onComplete.Invoke);
+    }
+
+    private void ApplyFromState(TweenData data, Vector3 value)
+    {
+        switch (data.tweenType)
+        {
+            case TweenType.Move:
+                rectTransform.anchoredPosition = value;
+                break;
+
+            case TweenType.Scale:
+                target.transform.localScale = value;
+                break;
+
+            case TweenType.Rotate:
+                target.transform.eulerAngles = value;
+                break;
+
+            case TweenType.Fade:
+                canvasGroup.alpha = value.x;
+                break;
+        }
+    }
+
+    private bool NeedsCanvasGroup()
+    {
+        foreach (TweenData tween in tweens)
+        {
+            if (tween.tweenType == TweenType.Fade)
+                return true;
+        }
+        return false;
     }
 }

@@ -3,11 +3,12 @@ using UnityEngine;
 public class StatUpgradeTrigger : MonoBehaviour
 {
     public StatData statData;
+    [SerializeField] GameObject spawnEffect;
 
     public enum UpgradeType
     {
         IncreaseLevel,
-        IncreaseSegmentCapacity,
+        SpawnItem,
         AddSegmentType
     }
 
@@ -31,10 +32,11 @@ public class StatUpgradeTrigger : MonoBehaviour
         {
             case UpgradeType.IncreaseLevel:
                 statData.IncreaseLevel(amount);
+                statData.IncreaseSegmentCapacity(amount); 
                 break;
 
-            case UpgradeType.IncreaseSegmentCapacity:
-                statData.IncreaseSegmentCapacity(amount);
+            case UpgradeType.SpawnItem:
+                Instantiate(spawnEffect, transform.position, Quaternion.identity);
                 break;
 
             case UpgradeType.AddSegmentType:

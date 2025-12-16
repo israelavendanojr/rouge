@@ -44,6 +44,21 @@ public class AllyController : StateMachine
         collectState = new AllyCollectState(this);
         positionState = new AllyPositionState(this);
         consumeState = new AllyConsumeState(this);
+        
+        // Register with manager
+        if (AllyManager.Instance != null)
+        {
+            AllyManager.Instance.RegisterAlly(gameObject);
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        // Unregister from manager
+        if (AllyManager.Instance != null)
+        {
+            AllyManager.Instance.UnregisterAlly(gameObject);
+        }
     }
 
     public override State InitialState() => collectState;

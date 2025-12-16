@@ -14,11 +14,13 @@ public class ItemSpawner : MonoBehaviour
     
     private HealthComponent healthComponent;
     private float spawnTimer;
+    GameManager gameManager;
     
     void Awake()
     {
         healthComponent = GetComponent<HealthComponent>();
         spawnableItems = FindObjectOfType<GameManager>().GetStatData().currentSegments.ToArray();
+        gameManager = FindObjectOfType<GameManager>();
     }
     
     void Start()
@@ -35,6 +37,11 @@ public class ItemSpawner : MonoBehaviour
             TrySpawnItem();
             spawnTimer = spawnInterval;
         }
+    }
+
+    public void UpdateSpawnableItems()
+    {
+        spawnableItems = gameManager.GetStatData().currentSegments.ToArray();
     }
     
     void TrySpawnItem()

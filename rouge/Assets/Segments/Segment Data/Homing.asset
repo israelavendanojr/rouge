@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313473f14f92b02448fa05c902a5ccc2, type: 3}
+  m_Name: Homing
+  m_EditorClassIdentifier: 
+  segmentColor: {r: 1, g: 1, b: 1, a: 1}
+  segmentSprite: {fileID: -351951484, guid: aab8f62471f86ba46a481e736a19fce3, type: 3}
+  segmentName: Homing Elf
+  description: 
+  spawnPrefabs:
+  - {fileID: 4525442372378661998, guid: f746d4a89e5040b47a5fdb5497bd44db, type: 3}
+  - {fileID: 4525442372378661998, guid: fd5cb81f8d7482243aa5f5babbb0866b, type: 3}
+  - {fileID: 4525442372378661998, guid: 3e070810afc40ea4f951d0c590b7d4bb, type: 3}

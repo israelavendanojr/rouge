@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c019e0395c12f4593cfc48c6a24fe3, type: 3}
   m_Name: Projectile Segment
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4525442372378661998, guid: 9a62da7483efe8545934dc3fdbb4db9a, type: 3}
+  prefab: {fileID: 4525442372378661998, guid: 4f58e3344a53db942a44e26b74b6f731, type: 3}
   cost: 1
   spawnWeight: 1

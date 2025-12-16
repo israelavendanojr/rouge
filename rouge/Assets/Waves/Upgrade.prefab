@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statData: {fileID: 11400000, guid: 35cd8c930ea8a604b83af80278780054, type: 2}
+  spawnEffect: {fileID: 8278926688601646689, guid: 360a004a917597f4dbb96c6b8d4398b9, type: 3}
   upgradeType: 2
   amount: 1
   onUpgrade: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
@@ -137,7 +138,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3898031522905998098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fe1baa3c5b47c2f4d9a9542740b5802c, type: 2}
   m_CullingMode: 0
