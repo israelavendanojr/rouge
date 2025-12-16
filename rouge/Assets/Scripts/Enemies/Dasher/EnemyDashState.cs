@@ -100,7 +100,7 @@ public class EnemyDashState : State
 
     public override void OnTriggerEnter(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Ally"))
         {
             if (currentPhase == StatePhase.Dashing)
             {

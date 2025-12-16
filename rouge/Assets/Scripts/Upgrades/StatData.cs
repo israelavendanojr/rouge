@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class StatData : ScriptableObject
 {
     public List<SpawnableData> currentSegments;
+    public int GetSegmentLength() => currentSegments.Count;
     
     public List<SpawnableData> segmentTypes;
     public int level = 1;

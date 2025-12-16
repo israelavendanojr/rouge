@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4525442372378661999}
   - component: {fileID: 4525442372378662006}
   - component: {fileID: 2894029006662875860}
-  - component: {fileID: -2606422263823383473}
-  - component: {fileID: -5742534688474972890}
+  - component: {fileID: 5345841822947032486}
+  - component: {fileID: 4044196840824104847}
   m_Layer: 0
-  m_Name: Bomb Item
+  m_Name: Ally Item
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 662853963, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
+  m_Sprite: {fileID: 1144280523, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a72b3c16a56381418dd2a8876568851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentData: {fileID: 11400000, guid: fbe4ef6179f884c468374c50d6ed8587, type: 2}
---- !u!114 &-2606422263823383473
+  segmentData: {fileID: 11400000, guid: 92fb1c302362d6b479aa7402a3882a5f, type: 2}
+--- !u!114 &5345841822947032486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayInSeconds: 5
---- !u!95 &-5742534688474972890
+--- !u!95 &4044196840824104847
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ Animator:
   m_GameObject: {fileID: 4525442372378661998}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 59bcd2b76b4926a41ac17c820f18cb1b, type: 2}
+  m_Controller: {fileID: 9100000, guid: cfe0376a569c07c479478fe7b932efc3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

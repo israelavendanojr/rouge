@@ -62,7 +62,7 @@ public class EnemyFollowState : State
     {
         GameObject other = collision.gameObject;
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || collision.CompareTag("Ally"))
         {
             HealthComponent targetHealth = other.GetComponent<HealthComponent>();
             if (targetHealth != null)

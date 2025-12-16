@@ -15,6 +15,7 @@ public class SnakeSegments : MonoBehaviour
     private List<Vector3> _positionHistory = new List<Vector3>();
 
     [SerializeField] private GameEvent onUpdate; 
+    [SerializeField] private bool syncHealth = true; 
     
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = true;
@@ -211,6 +212,7 @@ public class SnakeSegments : MonoBehaviour
         }
     }
 
+    
     public void RemoveLastSegment()
     {
         if (_segments.Count == 0)
@@ -236,7 +238,7 @@ public class SnakeSegments : MonoBehaviour
 
     private void SyncHealthToSegments()
     {
-        if (_healthComponent == null) return;
+        if (_healthComponent == null || !syncHealth) return;
 
         int segmentHealth = _segments.Count;
         _healthComponent.SetMaxHealth(segmentHealth + 1);
