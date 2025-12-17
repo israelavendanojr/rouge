@@ -15,6 +15,7 @@ public class StatUpgradeTrigger : MonoBehaviour
     public UpgradeType upgradeType;
     public int amount = 1; 
     [SerializeField] GameEvent onUpgrade;
+    [SerializeField] GameEvent upgradeSpecificEvent;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -44,9 +45,7 @@ public class StatUpgradeTrigger : MonoBehaviour
                 break;
         }
 
-        if (onUpgrade != null)
-        {
-            onUpgrade.Raise();
-        }
+        onUpgrade?.Raise();
+        upgradeSpecificEvent?.Raise();
     }
 }

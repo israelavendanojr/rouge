@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSegments:
   - {fileID: 11400000, guid: 11f0ea6e674f0a34893b68058592de53, type: 2}
-  - {fileID: 11400000, guid: 82ebf06c62d936f4b827b2bde464b27d, type: 2}
   segmentTypes:
   - {fileID: 11400000, guid: 11f0ea6e674f0a34893b68058592de53, type: 2}
   - {fileID: 11400000, guid: 157d725e5f69c7b42a2a69dec4927a4a, type: 2}

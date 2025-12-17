@@ -79,9 +79,37 @@ public class GameManager : StateMachine
         );
     }
 
+    public void LoadNextScene()
+    {
+        LoadNextScene(0f);
+    }
+
+    public void LoadNextScene(float delay)
+    {
+        StartCoroutine(LoadNextSceneRoutine(delay));
+    }
+
+    private IEnumerator LoadNextSceneRoutine(float delay)
+    {
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
+
+        int currentIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        int nextIndex = currentIndex + 1;
+
+        if (nextIndex >= UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+            nextIndex = 0; // Wrap around to first scene if at the end
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(nextIndex);
+    }
     public void ReachEndState()
     {
         SetState(new GameEndState(this));
+    }
+
+    public void ReachWinState()
+    {
+        SetState(new GameWinState(this));
     }
 
     public int GetWave() => wave;

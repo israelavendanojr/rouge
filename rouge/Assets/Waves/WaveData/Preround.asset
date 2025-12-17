@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 601b9e3705f19834dbea269f0e653f92, type: 3}
-  m_Name: Wave3
+  m_Name: Preround
   m_EditorClassIdentifier: 
-  pointBudget: 15
+  pointBudget: 3
   duration: 10
-  spawnInterval: 1.5
+  spawnInterval: 2
   availableSpawnables:
   - {fileID: 11400000, guid: 8a53fbe42c3095141998ae9a0b7997ab, type: 2}
-  - {fileID: 11400000, guid: 1bb619a5590a0c3488bc12d76f20e55f, type: 2}
-  - {fileID: 11400000, guid: 92b883030457d5b46b431265eff0578e, type: 2}
   useCustomSpawnables: 0
   customSpawnables: []

@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: upgradeType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3898031522905998100, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+      propertyPath: upgradeSpecificEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: b3fea16c442c23f499d58ac140072cc4, type: 2}
     - target: {fileID: 3898031522905998102, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -201,6 +205,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3898031522905998100, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+      propertyPath: upgradeSpecificEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 48c939a7eb6a0254a8921549f8e62fcb, type: 2}
     - target: {fileID: 3898031522905998102, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -293,6 +301,10 @@ PrefabInstance:
       propertyPath: upgradeType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3898031522905998100, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+      propertyPath: upgradeSpecificEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ac2bc5038c2e3634c9a0578504257eb8, type: 2}
     - target: {fileID: 3898031522905998102, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -176,6 +176,7 @@ MonoBehaviour:
   upgradeType: 2
   amount: 1
   onUpgrade: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+  upgradeSpecificEvent: {fileID: 0}
 --- !u!114 &4798078245804210429
 MonoBehaviour:
   m_ObjectHideFlags: 0

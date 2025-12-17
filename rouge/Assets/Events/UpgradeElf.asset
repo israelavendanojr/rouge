@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906134ba39601e9409937afdacbba54e, type: 3}
-  m_Name: Kid Cheer
+  m_Script: {fileID: 11500000, guid: 261e0b18948808045a42740ad5bdcdae, type: 3}
+  m_Name: UpgradeElf
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 3bdabce7d3ef210459aea12e9499de53, type: 3}
-  output: {fileID: 0}
-  volume: 0.283
-  pitch: 1
-  pitchVariance: 0
-  usePitchVariance: 1
-  loop: 0
