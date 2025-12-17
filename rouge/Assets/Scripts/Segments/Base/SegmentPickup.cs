@@ -36,7 +36,8 @@ public class SegmentPickup : MonoBehaviour
         if (snake != null)
         {
             snake.AddSegment(segmentData);
-            Destroy(gameObject); 
+            gameObject.GetComponent<TweenObject>().PlayTweenForward(2);
+            Destroy(gameObject, 3f); 
         }
     }
 

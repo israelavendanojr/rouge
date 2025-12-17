@@ -16,6 +16,6 @@ MonoBehaviour:
   output: {fileID: 0}
   volume: 0.34
   pitch: 1
-  pitchVariance: 0
+  pitchVariance: 0.1
   usePitchVariance: 1
   loop: 0

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2894029006662875860}
   - component: {fileID: -2606422263823383473}
   - component: {fileID: -5742534688474972890}
+  - component: {fileID: -2181256941929503271}
+  - component: {fileID: -6328269198394631117}
   m_Layer: 0
   m_Name: Bomb Item
   m_TagString: Pickup
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4525442372378661998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -160,3 +162,105 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-2181256941929503271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa59713fbfa320b41a9397b6bd08d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.35
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
+  offset: {x: -0.3, y: -0.3}
+  scaleMultiplier: {x: 1, y: 0.7}
+  sortingOrderOffset: -1
+  sortingLayerOverride: 
+  followRotation: 0
+  followScale: 1
+  autoShrinkWithHeight: 0
+  heightShrinkMultiplier: 1
+--- !u!114 &-6328269198394631117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22cd660c0ab6e34a838f01bbb118b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4525442372378661998}
+  tweens:
+  - tweenType: 0
+    playMode: 1
+    from: {x: 0, y: 0, z: 0}
+    to: {x: 0, y: 0.3, z: 0}
+    useFrom: 0
+    relative: 1
+    duration: 1.2
+    delay: 0
+    easeType: 16
+    loop: 0
+    pingPong: 1
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - tweenType: 1
+    playMode: 1
+    from: {x: 0, y: 0, z: 0}
+    to: {x: 1, y: 1, z: 1}
+    useFrom: 0
+    relative: 0
+    duration: 1
+    delay: 0
+    easeType: 31
+    loop: 0
+    pingPong: 0
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3898031522905998101, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - tweenType: 1
+    playMode: 0
+    from: {x: 1, y: 1, z: 1}
+    to: {x: 0, y: 0, z: 0}
+    useFrom: 0
+    relative: 0
+    duration: 0.2
+    delay: 0
+    easeType: 31
+    loop: 0
+    pingPong: 0
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3898031522905998101, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

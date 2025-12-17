@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2894029006662875860}
   - component: {fileID: 5345841822947032486}
   - component: {fileID: 4044196840824104847}
+  - component: {fileID: 8062432815249830212}
   m_Layer: 0
   m_Name: Ally Item
   m_TagString: Pickup
@@ -160,3 +161,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &8062432815249830212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa59713fbfa320b41a9397b6bd08d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.35
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
+  offset: {x: -0.3, y: -0.3}
+  scaleMultiplier: {x: 1, y: 0.7}
+  sortingOrderOffset: -1
+  sortingLayerOverride: 
+  followRotation: 0
+  followScale: 1
+  autoShrinkWithHeight: 0
+  heightShrinkMultiplier: 1

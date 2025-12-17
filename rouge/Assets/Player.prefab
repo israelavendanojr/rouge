@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 1473375798}
   - component: {fileID: 1776369990}
   - component: {fileID: 1776369991}
+  - component: {fileID: 1776369992}
+  - component: {fileID: 1776370008}
+  - component: {fileID: 1776370009}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -86,7 +89,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 066030563e2c5be4a8e1b07d8cf388cf, type: 3}
+  m_Sprite: {fileID: -1794622397, guid: ecd39788939fd4245a02642f7c7dabb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +117,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 3}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -235,11 +238,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 4525442372378661998, guid: 2ddb0a6a6ee2a5d4a994b2f59317675c, type: 3}
-  segmentSpacing: 2
+  segmentSpacing: 2.3
   followSpeed: 2
   maxSegments: 1
   _segments: []
   onUpdate: {fileID: 11400000, guid: 37d2cb2a8d27d5c4bb5cd2c46f769f99, type: 2}
+  syncHealth: 1
   showDebugInfo: 0
 --- !u!114 &4998644401499172950
 MonoBehaviour:
@@ -359,5 +363,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftX: -20
   rightX: 20
-  bottomY: -12
-  topY: 12
+  bottomY: -15
+  topY: 15
+--- !u!114 &1776369992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03aefd6ba3408648a6e84d497ca2912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1776370008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689f90ce398a0a547a8440234e89319a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipMode: 0
+  spriteDefaultFacesRight: 1
+  threshold: 0.1
+--- !u!114 &1776370009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa59713fbfa320b41a9397b6bd08d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.35
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
+  offset: {x: -0.3, y: -0.3}
+  scaleMultiplier: {x: 1, y: 0.7}
+  sortingOrderOffset: -1
+  sortingLayerOverride: 
+  followRotation: 0
+  followScale: 1
+  autoShrinkWithHeight: 0
+  heightShrinkMultiplier: 1

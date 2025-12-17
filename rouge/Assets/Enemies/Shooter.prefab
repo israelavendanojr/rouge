@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3652524346472989345}
   - component: {fileID: 7696495829456776815}
   - component: {fileID: 1856392862115630489}
+  - component: {fileID: -7821571573220418531}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Target
@@ -209,6 +210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 0}
   scoreValue: 1
+  happyPresentPrefab: {fileID: 700790234509052170, guid: 97aa3431c518086499ac85fb3dc3306f, type: 3}
+  deathAudioEvent: {fileID: 11400000, guid: 949c9432743bbde42a7af19afe992c90, type: 2}
   retreatSpeed: 3
   minDistanceFromPlayer: 3
   maxDistanceFromPlayer: 8
@@ -233,6 +236,28 @@ MonoBehaviour:
   flashDuration: 0.1
   invulnerabilityDuration: 0.5
   flashSound: {fileID: 11400000, guid: f084659889e40b546ad946955e4c755e, type: 2}
+--- !u!114 &-7821571573220418531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486137826005618276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa59713fbfa320b41a9397b6bd08d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.35
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
+  offset: {x: -0.3, y: -0.3}
+  scaleMultiplier: {x: 1, y: 0.7}
+  sortingOrderOffset: -1
+  sortingLayerOverride: 
+  followRotation: 0
+  followScale: 1
+  autoShrinkWithHeight: 0
+  heightShrinkMultiplier: 1
 --- !u!1 &6756255979900261947
 GameObject:
   m_ObjectHideFlags: 0

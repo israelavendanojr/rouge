@@ -14,6 +14,10 @@ public abstract class BaseEnemy : StateMachine
 
     [SerializeField] private int scoreValue = 1;
     public int GetScoreValue() => scoreValue;
+    [SerializeField] GameObject happyPresentPrefab;
+    public GameObject GetHappyPresentPrefab() => happyPresentPrefab;
+    [SerializeField] private SimpleAudioEvent deathAudioEvent;
+    public SimpleAudioEvent GetDeathAudioEvent() => deathAudioEvent;
 
     [Header("States")]
     protected EnemyIdleState idleState;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 
 // Change from MonoBehaviour to StateMachine
@@ -26,6 +27,9 @@ public class GameManager : StateMachine
     public float GetShopTime() => shopTime;
     [SerializeField] private GameObject shopPrefab;
     public GameObject GetShopPrefab() => shopPrefab;
+    [SerializeField] private GameEvent onShopEnd;
+    public GameEvent GetOnShopEnd() => onShopEnd;
+
     public int GetLevel() => statData.GetLevel();
 
 
@@ -57,6 +61,19 @@ public class GameManager : StateMachine
 
     public void RestartGame()
     {
+        RestartGame(0f);
+    }
+
+    public void RestartGame(float delay)
+    {
+        StartCoroutine(RestartGameRoutine(delay));
+    }
+
+    private IEnumerator RestartGameRoutine(float delay)
+    {
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );

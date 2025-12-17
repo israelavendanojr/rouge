@@ -26,11 +26,11 @@ public class GameEndState : State
 
     public override void Update()
     {
-        if (_respawnAction.WasPressedThisFrame())
-        {
-            _gameManager.RestartGame();
+        // if (_respawnAction.WasPressedThisFrame())
+        // {
+        //     _gameManager.RestartGame();
             
-        }
+        // }
     }
 
     public override void Exit()

@@ -5,11 +5,13 @@ public class GameShopState : State
     private float shopTime;               
     private GameManager _gameManager;
     GameObject shop;
+    GameEvent onShopEnd;
 
     public GameShopState(StateMachine stateMachine) : base(stateMachine)
     {
         _gameManager = stateMachine as GameManager;
         shopTime = _gameManager.GetShopTime(); 
+        onShopEnd = _gameManager.GetOnShopEnd();
     }
 
     public override void Enter()
@@ -24,7 +26,8 @@ public class GameShopState : State
         if (shopTime <= 0f)
         {
             shopTime = 0f;
-            GameObject.Destroy(shop);
+            onShopEnd.Raise();
+            GameObject.Destroy(shop, 3f);
             _gameManager.SetState(new GameWaveState(_gameManager));
         }
     }

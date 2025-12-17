@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4525442372378661999}
   - component: {fileID: 1705267894705854621}
   - component: {fileID: 7273985928240980414}
+  - component: {fileID: -633999848851260422}
   m_Layer: 0
   m_Name: Bomb 2
   m_TagString: Untagged
@@ -120,3 +121,25 @@ MonoBehaviour:
   targetTag: Target
   explosionSound: {fileID: 11400000, guid: 2289b4b7c745fce4ca4c5c868077c216, type: 2}
   particles: {fileID: 6990475374211065062, guid: 0d1ea34df054c644d84cdc67face6e40, type: 3}
+--- !u!114 &-633999848851260422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa59713fbfa320b41a9397b6bd08d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.35
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
+  offset: {x: -0.3, y: -0.3}
+  scaleMultiplier: {x: 1, y: 0.7}
+  sortingOrderOffset: -1
+  sortingLayerOverride: 
+  followRotation: 0
+  followScale: 1
+  autoShrinkWithHeight: 0
+  heightShrinkMultiplier: 1

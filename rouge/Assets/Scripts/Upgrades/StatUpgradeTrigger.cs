@@ -23,7 +23,7 @@ public class StatUpgradeTrigger : MonoBehaviour
 
         ApplyUpgrade();
 
-        Destroy(gameObject);
+        Destroy(gameObject, 0f);
     }
 
     private void ApplyUpgrade()

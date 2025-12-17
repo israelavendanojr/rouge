@@ -11,8 +11,12 @@ GameObject:
   - component: {fileID: 3898031522905998099}
   - component: {fileID: 3898031522905998102}
   - component: {fileID: 3898031522905998101}
-  - component: {fileID: 3898031522905998100}
   - component: {fileID: 3226389414997079089}
+  - component: {fileID: -8084972784346793633}
+  - component: {fileID: 3898031522905998100}
+  - component: {fileID: 4798078245804210429}
+  - component: {fileID: 336873744995322760}
+  - component: {fileID: -971003982990475597}
   m_Layer: 0
   m_Name: Upgrade
   m_TagString: Untagged
@@ -28,8 +32,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3898031522905998098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -11.576145, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,23 +117,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3898031522905998100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3898031522905998098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c4a19f8c0a79b4fb45ddf962539b7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statData: {fileID: 11400000, guid: 35cd8c930ea8a604b83af80278780054, type: 2}
-  spawnEffect: {fileID: 8278926688601646689, guid: 360a004a917597f4dbb96c6b8d4398b9, type: 3}
-  upgradeType: 2
-  amount: 1
-  onUpgrade: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
 --- !u!95 &3226389414997079089
 Animator:
   serializedVersion: 5
@@ -150,3 +137,178 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-8084972784346793633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898031522905998098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa59713fbfa320b41a9397b6bd08d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.35
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
+  offset: {x: -0.3, y: -0.3}
+  scaleMultiplier: {x: 1, y: 0.7}
+  sortingOrderOffset: -1
+  sortingLayerOverride: 
+  followRotation: 0
+  followScale: 1
+  autoShrinkWithHeight: 0
+  heightShrinkMultiplier: 1
+--- !u!114 &3898031522905998100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898031522905998098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c4a19f8c0a79b4fb45ddf962539b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statData: {fileID: 11400000, guid: 35cd8c930ea8a604b83af80278780054, type: 2}
+  spawnEffect: {fileID: 8278926688601646689, guid: 360a004a917597f4dbb96c6b8d4398b9, type: 3}
+  upgradeType: 2
+  amount: 1
+  onUpgrade: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+--- !u!114 &4798078245804210429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898031522905998098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22cd660c0ab6e34a838f01bbb118b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 3898031522905998098}
+  tweens:
+  - tweenType: 0
+    playMode: 1
+    from: {x: 0, y: 0, z: 0}
+    to: {x: 0, y: -0.6, z: 0}
+    useFrom: 0
+    relative: 1
+    duration: 0.8
+    delay: 0
+    easeType: 16
+    loop: 0
+    pingPong: 1
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - tweenType: 1
+    playMode: 1
+    from: {x: 0, y: 0, z: 0}
+    to: {x: 1, y: 1, z: 1}
+    useFrom: 0
+    relative: 0
+    duration: 1
+    delay: 0
+    easeType: 31
+    loop: 0
+    pingPong: 0
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3898031522905998101}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - tweenType: 1
+    playMode: 0
+    from: {x: 1, y: 1, z: 1}
+    to: {x: 0, y: 0, z: 0}
+    useFrom: 0
+    relative: 0
+    duration: 1
+    delay: 0
+    easeType: 31
+    loop: 0
+    pingPong: 0
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3898031522905998101}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &336873744995322760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898031522905998098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 0d94629baee3f93418cb8339c6436bc8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4798078245804210429}
+        m_TargetAssemblyTypeName: TweenObject, Assembly-CSharp
+        m_MethodName: PlayTweenForward
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-971003982990475597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898031522905998098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4798078245804210429}
+        m_TargetAssemblyTypeName: TweenObject, Assembly-CSharp
+        m_MethodName: PlayTweenForward
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

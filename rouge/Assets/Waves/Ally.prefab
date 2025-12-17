@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 5487985969482888008}
   - component: {fileID: 8278926688601646700}
   - component: {fileID: 8278926688601646701}
+  - component: {fileID: -34072634472017533}
   m_Layer: 0
   m_Name: Ally
   m_TagString: Ally
@@ -287,3 +288,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   targetTag: Target
+--- !u!114 &-34072634472017533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278926688601646689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa59713fbfa320b41a9397b6bd08d1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0.35
+  shadowColor: {r: 0, g: 0, b: 0, a: 1}
+  offset: {x: -0.3, y: -0.3}
+  scaleMultiplier: {x: 1, y: 0.7}
+  sortingOrderOffset: -1
+  sortingLayerOverride: 
+  followRotation: 0
+  followScale: 1
+  autoShrinkWithHeight: 0
+  heightShrinkMultiplier: 1
