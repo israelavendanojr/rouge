@@ -218,8 +218,9 @@ MonoBehaviour:
   fireballPrefab: {fileID: 4525442372378661998, guid: d17b313665f9e5a46ab8bbebe2bfe1c6, type: 3}
   fireRate: 1.5
   shotsPerVolley: 2
-  minRepositionDistance: 15
+  minRepositionDistance: 6
   spawnPoint: {fileID: 2120000119335573524}
+  shootAudioEvent: {fileID: 11400000, guid: 685d448e1f000e44a9f85166deb224ad, type: 2}
 --- !u!114 &1856392862115630489
 MonoBehaviour:
   m_ObjectHideFlags: 0

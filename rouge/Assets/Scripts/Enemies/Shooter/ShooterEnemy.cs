@@ -24,6 +24,8 @@ public class ShooterEnemy : BaseEnemy
 
     private EnemyPositionState positionState;
     private EnemyShootState shootState;
+    [SerializeField] private SimpleAudioEvent shootAudioEvent;
+    public SimpleAudioEvent GetShootAudioEvent() => shootAudioEvent;
 
     protected override void Awake()
     {

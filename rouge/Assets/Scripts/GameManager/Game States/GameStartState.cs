@@ -21,6 +21,7 @@ public class GameStartState : State
         
         _startAction = _gameManager.GetInteractAction().action;
         _startAction.Enable();
+        _gameManager.GetStatData().InitializeStats();
     }
 
     public override void Update()

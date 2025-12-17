@@ -54,10 +54,10 @@ public class UpdateValueUI : MonoBehaviour
        switch (valueType)
     {
         case ValueType.Wave:
-            value = gameManager.GetWave();
+            value = gameManager.GetStatData().waveNumber;
             break;
         case ValueType.Score:
-            value = gameManager.GetScore();
+            value = gameManager.GetStatData().score;
             break;
         case ValueType.Level:
             value = gameManager.GetLevel(); 

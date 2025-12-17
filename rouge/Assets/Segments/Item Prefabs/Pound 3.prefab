@@ -102,7 +102,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 8
 --- !u!114 &7273985928240980414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuseTime: 0
-  damage: 2
+  damage: 3
   explosionCollider: {fileID: 1705267894705854621}
   targetTag: Target
   explosionSound: {fileID: 11400000, guid: 6e67120ee07a8734582b38ff50e1f704, type: 2}

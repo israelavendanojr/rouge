@@ -8,6 +8,8 @@ public class WaveSpawner : MonoBehaviour
     public WaveData[] waves;
     public int currentWaveIndex = 0;
     [SerializeField] private GameEvent onWin;
+    [SerializeField] private GameEvent onFinalRound;
+
     
     [Header("Spawn Settings")]
     public Transform[] spawnLocations;
@@ -68,6 +70,10 @@ public class WaveSpawner : MonoBehaviour
         {
             onWin?.Raise();
             return;
+        }
+        if (currentWaveIndex == waves.Length - 1)
+        {
+            onFinalRound?.Raise();
         }
             
         WaveData wave = waves[currentWaveIndex];

@@ -31,7 +31,7 @@ public class GameWaveState : State
                 _gameManager.ReachEndState();
             }
 
-            bool isShopTime = (_gameManager.GetWave() % _gameManager.GetShopFrequency() == 0) ? true : false;
+            bool isShopTime = (_gameManager.GetStatData().waveNumber % _gameManager.GetShopFrequency() == 0) ? true : false;
 
             if (isShopTime)
                 _gameManager.SetState(new GameShopState(_gameManager));

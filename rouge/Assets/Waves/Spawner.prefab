@@ -205,12 +205,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - {fileID: 11400000, guid: 5ca253adac0ddf3419b41284ff4d44dd, type: 2}
   - {fileID: 11400000, guid: 43c85a385adeedf4da21bdc2086ce186, type: 2}
   - {fileID: 11400000, guid: e2dab4b1d6dd64b40b796ffe4bc50c69, type: 2}
   - {fileID: 11400000, guid: 5d1cf752458c07b429521462721265a2, type: 2}
   - {fileID: 11400000, guid: 3724215be77124b4c90b3e3bd78b2196, type: 2}
+  - {fileID: 11400000, guid: c19c0aef3f13e58488e5bc2dff98acad, type: 2}
   currentWaveIndex: 0
-  onWaveStart: {fileID: 11400000, guid: 1b5da773dd6411947bb58ddcd60c7cac, type: 2}
+  onWin: {fileID: 11400000, guid: f1bd3ffcd39e607418c6d0424445eb65, type: 2}
+  onFinalRound: {fileID: 11400000, guid: c5a9ae9cbe529374ca8aa77e9c0eb65f, type: 2}
   spawnLocations:
   - {fileID: 6252001864559454946}
   - {fileID: 6252001864456093707}

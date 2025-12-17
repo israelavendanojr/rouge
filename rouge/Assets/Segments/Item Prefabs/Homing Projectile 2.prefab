@@ -166,8 +166,8 @@ MonoBehaviour:
   speed: 8
   turnSpeed: 360
   predictionStrength: 0.5
-  damage: 1
-  lifetime: 6
+  damage: 2
+  lifetime: 8
   exitParticleEffect: {fileID: 0}
 --- !u!95 &8285656450780680618
 Animator:

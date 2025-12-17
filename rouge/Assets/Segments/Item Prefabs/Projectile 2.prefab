@@ -131,7 +131,7 @@ MonoBehaviour:
   targetTag: Target
   speed: 17
   rotationSpeed: 1
-  damage: 1
+  damage: 2
   exitParticleEffect: {fileID: 0}
 --- !u!114 &3328243229890126146
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7cc46794302b74087b3ae585f13811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 2
   currentHealth: 0
   OnDamaged: {fileID: 0}
   OnHealed: {fileID: 0}

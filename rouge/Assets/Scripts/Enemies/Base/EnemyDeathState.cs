@@ -25,7 +25,7 @@ public class EnemyDeathState : State
         // Rewards
         enemy.GetSpawnable().SpawnOne();
         enemy.GetGameManager().AddScore(
-            enemy.GetScoreValue() * enemy.GetGameManager().GetWave()
+            enemy.GetScoreValue() * enemy.GetGameManager().GetStatData().waveNumber
         );
 
         // Visuals — spawn present as a child so it looks like enemy is carrying it

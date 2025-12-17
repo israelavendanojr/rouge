@@ -163,11 +163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Target
   retargetInterval: 0.3
-  speed: 11
+  speed: 11.5
   turnSpeed: 360
   predictionStrength: 0.5
-  damage: 2
-  lifetime: 6
+  damage: 3
+  lifetime: 12
   exitParticleEffect: {fileID: 0}
 --- !u!95 &8285656450780680618
 Animator:

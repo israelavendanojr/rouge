@@ -145,6 +145,39 @@ PrefabInstance:
       objectReference: {fileID: -455758154, guid: 00871167e1e14c34d9aa7cb432b8bb3a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+--- !u!1 &4332791743791024552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3898031522905998098, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+  m_PrefabInstance: {fileID: 736826889481390778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4657589853434469509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4332791743791024552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2598820891126341250}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &4332791743791024553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3898031522905998099, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
@@ -237,6 +270,34 @@ MonoBehaviour:
   - {fileID: -924227998, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
   - {fileID: 662853963, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
   - {fileID: 1144280523, guid: dfbb24b8af2a07041822ccf0c0950bf9, type: 3}
+--- !u!114 &3994054862055131872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4384227406760512920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2598820891126341250}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &4384227406760512921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3898031522905998099, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
@@ -311,8 +372,46 @@ PrefabInstance:
       objectReference: {fileID: -1189398877, guid: 84764c80bda5102438805bb1d6cb81fa, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+--- !u!61 &2598820891126341250 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3898031522905998101, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+  m_PrefabInstance: {fileID: 1299370752468147607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2598820891126341252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3898031522905998099, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
   m_PrefabInstance: {fileID: 1299370752468147607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2598820891126341253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3898031522905998098, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+  m_PrefabInstance: {fileID: 1299370752468147607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2992141742327371285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598820891126341253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a15d8c0c86327449e15f89665f3ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6c6edd0a8c5e008499438e07cb945dfb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2598820891126341250}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

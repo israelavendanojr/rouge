@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointBudget: 3
   duration: 10
-  spawnInterval: 2
+  spawnInterval: 3
   availableSpawnables:
   - {fileID: 11400000, guid: 8a53fbe42c3095141998ae9a0b7997ab, type: 2}
   useCustomSpawnables: 0

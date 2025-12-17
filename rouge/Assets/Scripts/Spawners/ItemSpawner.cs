@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(HealthComponent))]
 public class ItemSpawner : MonoBehaviour
@@ -19,13 +20,14 @@ public class ItemSpawner : MonoBehaviour
     void Awake()
     {
         healthComponent = GetComponent<HealthComponent>();
-        spawnableItems = FindObjectOfType<GameManager>().GetStatData().currentSegments.ToArray();
         gameManager = FindObjectOfType<GameManager>();
+        StartCoroutine(DefineSpawnables(1.5f));
     }
     
     void Start()
     {
         spawnTimer = spawnInterval;
+        spawnableItems = FindObjectOfType<GameManager>().GetStatData().currentSegments.ToArray();
     }
     
     void Update()
@@ -93,5 +95,12 @@ public class ItemSpawner : MonoBehaviour
         
         // Fallback to first item
         return spawnableItems[0];
+    }
+
+    IEnumerator DefineSpawnables(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        spawnableItems = FindObjectOfType<GameManager>().GetStatData().currentSegments.ToArray();
+
     }
 }

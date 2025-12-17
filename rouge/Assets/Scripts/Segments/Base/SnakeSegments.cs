@@ -152,7 +152,7 @@ public class SnakeSegments : MonoBehaviour
         segment.Initialize(data);
         _segments.Add(segment);
         if (_gameManager != null)
-            _gameManager.AddScore(GetSegmentCount() * _gameManager.GetWave());
+            _gameManager.AddScore(GetSegmentCount() * _gameManager.GetStatData().waveNumber);
 
         SyncHealthToSegments();
 

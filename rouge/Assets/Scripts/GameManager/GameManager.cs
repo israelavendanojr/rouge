@@ -17,7 +17,7 @@ public class GameManager : StateMachine
     [Header("Wave Data")]
     private WaveSpawner waveSpawner;
     public WaveSpawner GetWaveSpawner() => waveSpawner;
-    [SerializeField] private int wave = 1;
+    // [SerializeField] private int wave = 1;
     [SerializeField] private GameEvent onWaveStarted;
     [SerializeField] private float waitTime = 5;
     public float GetWaitTime() => waitTime;
@@ -35,7 +35,7 @@ public class GameManager : StateMachine
 
     
     [Header("Score Data")]
-    [SerializeField] private int score = 0;
+    // [SerializeField] private int score = 0;
     [SerializeField] private GameEvent onScoreUpdated;
 
 
@@ -55,8 +55,6 @@ public class GameManager : StateMachine
             onScoreUpdated.Raise();
 
         waveSpawner = FindObjectOfType<WaveSpawner>();
-
-        statData.InitializeStats();
     }
 
     public void RestartGame()
@@ -112,12 +110,12 @@ public class GameManager : StateMachine
         SetState(new GameWinState(this));
     }
 
-    public int GetWave() => wave;
-    public int GetScore() => score;
+    // public int GetWave() => wave;
+    // public int GetScore() => score;
 
     public void AddScore(int amount = 1)
     {
-        score += amount;
+        statData.score += amount;
         
         if (onScoreUpdated != null)
             onScoreUpdated.Raise();
@@ -125,7 +123,7 @@ public class GameManager : StateMachine
 
     public void UpdateWave(int waveNumber)
     {
-        wave = waveNumber;
+        statData.waveNumber = waveNumber;
         
         if (onWaveStarted != null)
             onWaveStarted.Raise();

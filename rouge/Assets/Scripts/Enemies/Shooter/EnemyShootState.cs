@@ -13,6 +13,7 @@ public class EnemyShootState : State
     
     private float fireTimer;
     private int shotsFired;
+    private SimpleAudioEvent shootAudioEvent;
 
     public EnemyShootState(ShooterEnemy enemy, Transform target, float rate, int volley) : base(enemy)
     {
@@ -21,6 +22,7 @@ public class EnemyShootState : State
         this.rb = enemy.GetRigidbody();
         this.fireRate = rate;
         this.shotsPerVolley = volley;
+        this.shootAudioEvent = enemy.GetShootAudioEvent();
     }
 
     public void SetPositionState(EnemyPositionState state)
@@ -80,6 +82,7 @@ public class EnemyShootState : State
 
 
         shotsFired++;
+        shootAudioEvent?.Play();
     }
 
     public override void Exit()

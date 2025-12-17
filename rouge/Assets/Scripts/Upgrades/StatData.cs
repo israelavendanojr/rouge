@@ -12,6 +12,9 @@ public class StatData : ScriptableObject
     public int level = 1;
     public int GetLevel() => level;
     public int segmentCapacity = 1;
+    public int GetSegmentCapacity() => segmentCapacity;
+    public int waveNumber = 0;
+    public int score = 0;
 
     public void InitializeStats()
     {
@@ -20,6 +23,8 @@ public class StatData : ScriptableObject
         
         level = 1;
         segmentCapacity = 1;
+        waveNumber = 0;
+        score = 0;
     }
 
     public SpawnableData GetNewSegmentType()

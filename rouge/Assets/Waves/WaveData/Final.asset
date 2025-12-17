@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601b9e3705f19834dbea269f0e653f92, type: 3}
+  m_Name: Final
+  m_EditorClassIdentifier: 
+  pointBudget: 30
+  duration: 30
+  spawnInterval: 2.5
+  availableSpawnables:
+  - {fileID: 11400000, guid: 8a53fbe42c3095141998ae9a0b7997ab, type: 2}
+  - {fileID: 11400000, guid: 1bb619a5590a0c3488bc12d76f20e55f, type: 2}
+  - {fileID: 11400000, guid: 92b883030457d5b46b431265eff0578e, type: 2}
+  - {fileID: 11400000, guid: f322ef6818a7dbb48b866a56dd606077, type: 2}
+  useCustomSpawnables: 0
+  customSpawnables: []
