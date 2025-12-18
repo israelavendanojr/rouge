@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 906134ba39601e9409937afdacbba54e, type: 3}
-  m_Name: Theme
+  m_Name: Cheer
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: f5bb0ad4732442244b9b8962e9091f9d, type: 3}
+  clip: {fileID: 8300000, guid: 572bd582cd07bc44f927e7bf9becaf5d, type: 3}
   output: {fileID: 0}
-  volume: 0.086
+  volume: 0.142
   pitch: 1
   pitchVariance: 0
-  usePitchVariance: 0
-  loop: 1
+  usePitchVariance: 1
+  loop: 0

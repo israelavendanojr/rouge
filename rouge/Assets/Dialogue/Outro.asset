@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe70495b895292469c8ab2e216dc246, type: 3}
+  m_Name: Outro
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
+    dialogue: (Left Click)
+    textColor: {r: 0.6156863, g: 0.7372549, b: 0.33333334, a: 1}
+    typingSpeed: 15.2
+    onLineStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
+    dialogue: The Grinch's heart grew 3x ...
+    textColor: {r: 0.6156863, g: 0.7372549, b: 0.33333334, a: 1}
+    typingSpeed: 14.8
+    onLineStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
+    dialogue: The kids have gotten their gifts ...
+    textColor: {r: 0.9450981, g: 0.93725497, b: 0.93725497, a: 1}
+    typingSpeed: 14.6
+    onLineStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
+    dialogue: Christmas has been saved! ...
+    textColor: {r: 0.9450981, g: 0.93725497, b: 0.93725497, a: 1}
+    typingSpeed: 14.1
+    onLineStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
+    dialogue: Happy holidays and ...
+    textColor: {r: 0.9450981, g: 0.93725497, b: 0.93725497, a: 1}
+    typingSpeed: 14.5
+    onLineStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
+    dialogue: 'thank you for playing! '
+    textColor: {r: 0.9450981, g: 0.93725497, b: 0.93725497, a: 1}
+    typingSpeed: 8.5
+    onLineStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onLineComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: e15a40d9dab1ad64186d4de4b95e3cd8, type: 2}
+          m_TargetAssemblyTypeName: SimpleAudioEvent, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onConversationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onConversationEnd:
+    m_PersistentCalls:
+      m_Calls: []

@@ -17,6 +17,33 @@ public class StatUpgradeTrigger : MonoBehaviour
     [SerializeField] GameEvent onUpgrade;
     [SerializeField] GameEvent upgradeSpecificEvent;
 
+    void Start()
+    {
+        switch (upgradeType)
+        {
+            case UpgradeType.IncreaseLevel:
+                if (statData.maxLevel <= statData.GetLevel())
+                {
+                    Destroy(gameObject, 0f);
+                }
+                break;
+
+            case UpgradeType.SpawnItem:
+                GameObject[] allies = GameObject.FindGameObjectsWithTag("Ally");
+                if (statData.maxAllies <= allies.Length)
+                {
+                    Destroy(gameObject, 0f);
+                }
+                break;
+
+            case UpgradeType.AddSegmentType:
+                if (statData.segmentTypes.Count <= statData.currentSegments.Count)
+                {
+                    Destroy(gameObject, 0f);
+                }
+                break;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player"))

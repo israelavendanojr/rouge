@@ -23,7 +23,6 @@ public class GameEndState : State
         _respawnAction = _gameManager.GetInteractAction().action;
         _respawnAction.Enable();
 
-        _gameManager.GetStatData().InitializeStats();
     }
 
     public override void Update()

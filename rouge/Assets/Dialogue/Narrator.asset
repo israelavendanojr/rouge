@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906134ba39601e9409937afdacbba54e, type: 3}
-  m_Name: Theme
+  m_Script: {fileID: 11500000, guid: 31715e0686b2f7c479c017925b6043f7, type: 3}
+  m_Name: Narrator
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: f5bb0ad4732442244b9b8962e9091f9d, type: 3}
-  output: {fileID: 0}
-  volume: 0.086
-  pitch: 1
-  pitchVariance: 0
-  usePitchVariance: 0
-  loop: 1
+  speakerName: 
+  portrait: {fileID: 0}
+  voiceSound: {fileID: 11400000, guid: 0037df2baafbaf045baac53b88fb8583, type: 2}
+  textColor: {r: 0.9450981, g: 0.93725497, b: 0.93725497, a: 1}

@@ -9,7 +9,7 @@ public class SnakeSegments : MonoBehaviour
     [Header("Segment Settings")]
     [SerializeField] private float segmentSpacing = 2.5f;
     [SerializeField] private float followSpeed = 10f;
-    [SerializeField] private int maxSegments = 6; 
+    [SerializeField] private int maxSegments = 1; 
     
     [SerializeField] private List<Segment> _segments = new List<Segment>();
     private List<Vector3> _positionHistory = new List<Vector3>();

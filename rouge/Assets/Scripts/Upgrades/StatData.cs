@@ -11,7 +11,10 @@ public class StatData : ScriptableObject
     public List<SpawnableData> segmentTypes;
     public int level = 1;
     public int GetLevel() => level;
+    public int maxLevel = 3;
     public int segmentCapacity = 1;
+    public int maxSegmentCapacity = 3;
+    public int maxAllies = 3;
     public int GetSegmentCapacity() => segmentCapacity;
     public int waveNumber = 0;
     public int score = 0;

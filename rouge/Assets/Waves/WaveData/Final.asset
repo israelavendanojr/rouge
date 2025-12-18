@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601b9e3705f19834dbea269f0e653f92, type: 3}
   m_Name: Final
   m_EditorClassIdentifier: 
-  pointBudget: 30
-  duration: 30
-  spawnInterval: 2.5
+  pointBudget: 50
+  duration: 20
+  spawnInterval: 3
   availableSpawnables:
   - {fileID: 11400000, guid: 8a53fbe42c3095141998ae9a0b7997ab, type: 2}
   - {fileID: 11400000, guid: 1bb619a5590a0c3488bc12d76f20e55f, type: 2}

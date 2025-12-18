@@ -28,8 +28,9 @@ public class GameWaveState : State
             waveSpawner.currentWaveIndex++;
             if (!waveSpawner.WavesRemaining())
             {
-                _gameManager.ReachEndState();
+                _gameManager.ReachWinState();
             }
+
 
             bool isShopTime = (_gameManager.GetStatData().waveNumber % _gameManager.GetShopFrequency() == 0) ? true : false;
 

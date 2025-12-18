@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601b9e3705f19834dbea269f0e653f92, type: 3}
   m_Name: Tank
   m_EditorClassIdentifier: 
-  pointBudget: 15
+  pointBudget: 30
   duration: 20
   spawnInterval: 2.5
   availableSpawnables:
