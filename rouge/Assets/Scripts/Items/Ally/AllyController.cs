@@ -15,11 +15,13 @@ public class AllyController : StateMachine
     private AllyCollectState collectState;
     private AllyPositionState positionState;
     private AllyConsumeState consumeState;
+    private AllyWanderState wanderState;
 
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float consumeRange = 8f;
     [SerializeField] private float consumeInterval = 0.5f;
+    [SerializeField] private float wanderRadius = 5f;
 
     public float GetMoveSpeed() => moveSpeed;
     public float GetConsumeRange() => consumeRange;
@@ -44,26 +46,18 @@ public class AllyController : StateMachine
         collectState = new AllyCollectState(this);
         positionState = new AllyPositionState(this);
         consumeState = new AllyConsumeState(this);
+        wanderState = new AllyWanderState(this, wanderRadius);
         
-        // Register with manager
-        if (AllyManager.Instance != null)
-        {
-            AllyManager.Instance.RegisterAlly(gameObject);
-        }
     }
     
     private void OnDestroy()
     {
-        // Unregister from manager
-        if (AllyManager.Instance != null)
-        {
-            AllyManager.Instance.UnregisterAlly(gameObject);
-        }
     }
 
-    public override State InitialState() => collectState;
+    public override State InitialState() => wanderState; // Start with wandering
 
     public AllyCollectState GetCollectState() => collectState;
     public AllyPositionState GetPositionState() => positionState;
     public AllyConsumeState GetConsumeState() => consumeState;
+    public AllyWanderState GetWanderState() => wanderState;
 }

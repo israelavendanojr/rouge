@@ -9,6 +9,8 @@ public class AllyCollectState : State
 
     private GameObject targetPickup;
     private HealthComponent healthComponent;
+    private float noPickupTimer;
+    private float noPickupThreshold = 1f; // Switch to wander after 1 second with no pickup
 
 
     public AllyCollectState(AllyController ally) : base(ally)
@@ -23,6 +25,7 @@ public class AllyCollectState : State
     public override void Enter()
     {
         FindNearestPickup();
+        noPickupTimer = 0f;
     }
 
     public override void FixedUpdate()
@@ -35,11 +38,24 @@ public class AllyCollectState : State
             {
                 rb.velocity = Vector2.zero;
                 
+                // If we have segments, go to position state
                 if (snakeSegments.GetSegmentCount() > 0)
                 {
                     ally.SetState(ally.GetPositionState());
+                    return;
+                }
+                
+                // Otherwise wait a bit, then switch to wander
+                noPickupTimer += Time.fixedDeltaTime;
+                if (noPickupTimer >= noPickupThreshold)
+                {
+                    ally.SetState(ally.GetWanderState());
                 }
                 return;
+            }
+            else
+            {
+                noPickupTimer = 0f; // Reset timer when pickup found
             }
         }
 
@@ -50,6 +66,7 @@ public class AllyCollectState : State
             ally.SetState(ally.GetPositionState());
         }
     }
+    
     public override void Update()
     {
         if (healthComponent.GetCurrentHealth() <= 0)
@@ -100,5 +117,6 @@ public class AllyCollectState : State
     {
         rb.velocity = Vector2.zero;
         targetPickup = null;
+        noPickupTimer = 0f;
     }
 }

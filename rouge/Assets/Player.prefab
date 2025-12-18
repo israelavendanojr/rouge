@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 4525442372378661998, guid: 2ddb0a6a6ee2a5d4a994b2f59317675c, type: 3}
-  segmentSpacing: 2.3
+  segmentSpacing: 0.4
   followSpeed: 2
   maxSegments: 1
   _segments: []

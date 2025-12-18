@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour
     [Header("Wave Configuration")]
     public WaveData[] waves;
     public int currentWaveIndex = 0;
-    [SerializeField] private GameEvent onWin;
+    [SerializeField] private GameEvent onWavesOver;
     [SerializeField] private GameEvent onFinalRound;
 
     
@@ -68,7 +68,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (!WavesRemaining())
         {
-            onWin?.Raise();
+            onWavesOver?.Raise();
             return;
         }
         if (currentWaveIndex == waves.Length - 1)

@@ -35,7 +35,7 @@ MonoBehaviour:
         m_Calls: []
   - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
     dialogue: A green creature has shuffled everyone's presents ...
-    textColor: {r: 0.6156863, g: 0.7372549, b: 0.33333334, a: 1}
+    textColor: {r: 0.8000001, g: 0.16078432, b: 0.26666668, a: 1}
     typingSpeed: 14.5
     onLineStart:
       m_PersistentCalls:
@@ -64,7 +64,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - speaker: {fileID: 11400000, guid: d25025af448a8bb4c9c7929fbb898d27, type: 2}
-    dialogue: GRAB (mouse) and RETURN (left click) presents.
+    dialogue: PICK UP (mouse) and RETURN (left click) presents.
     textColor: {r: 0.9450981, g: 0.93725497, b: 0.93725497, a: 1}
     typingSpeed: 18.9
     onLineStart:

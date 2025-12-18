@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 906134ba39601e9409937afdacbba54e, type: 3}
-  m_Name: Place
+  m_Name: Place 1
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: f7eef1a69500c30498fd8d6e0f2bb006, type: 3}
+  clip: {fileID: 8300000, guid: 042e91138ed9f214bad2dd413fb148d3, type: 3}
   output: {fileID: 0}
-  volume: 0.304
+  volume: 0.291
   pitch: 1
   pitchVariance: 0
   usePitchVariance: 1

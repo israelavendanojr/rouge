@@ -26,18 +26,22 @@ public class GameWaveState : State
         if (waveSpawner.IsWaveComplete())
         {
             waveSpawner.currentWaveIndex++;
+            BossEnemy BossEnemy = GameObject.FindObjectOfType<BossEnemy>();
             if (!waveSpawner.WavesRemaining())
             {
-                _gameManager.ReachWinState();
+                if (BossEnemy == null)
+                    _gameManager.SetState(new GameWinState(_gameManager));
+            }
+            else
+            {
+                bool isShopTime = (_gameManager.GetStatData().waveNumber % _gameManager.GetShopFrequency() == 0) ? true : false;
+
+                if (isShopTime)
+                    _gameManager.SetState(new GameShopState(_gameManager));
+                else
+                    _gameManager.SetState(new GameWaitState(_gameManager));
             }
 
-
-            bool isShopTime = (_gameManager.GetStatData().waveNumber % _gameManager.GetShopFrequency() == 0) ? true : false;
-
-            if (isShopTime)
-                _gameManager.SetState(new GameShopState(_gameManager));
-            else
-                _gameManager.SetState(new GameWaitState(_gameManager));
                 
         }
     }

@@ -39,6 +39,8 @@ public class SnakeSegments : MonoBehaviour
         }
 
         maxSegments = _gameManager.GetStatData().segmentCapacity;
+        maxSegments = 1;
+        _segments.Clear();
     }
 
     private void Start()

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,11 +8,13 @@ public class GameWinState : State
     private InputAction _interactAction;
     private GameManager _gameManager;
     private GameObject _player;
+    private GameEvent onWin;
 
     public GameWinState(StateMachine stateMachine) : base(stateMachine)
     {
         _gameManager = stateMachine as GameManager;
         _player = _gameManager.GetPlayer();
+        onWin = _gameManager.GetOnWin();
     }
 
     public override void Enter()
@@ -23,7 +27,8 @@ public class GameWinState : State
         _interactAction = _gameManager.GetInteractAction().action;
         _interactAction.Enable();
 
-        _gameManager.LoadNextScene(1f);
+
+        _gameManager.StartCoroutine(winTimer());
     }
 
     public override void Update()
@@ -48,5 +53,13 @@ public class GameWinState : State
         // Re-enable player control
         _player.GetComponent<MouseFollower>().enabled = true;
         _player.GetComponent<ConsumeSegment>().enabled = true;
+    }
+
+    IEnumerator winTimer()
+    {
+        yield return new WaitForSeconds(4f);
+        onWin?.Raise();
+        _gameManager.LoadNextScene(1f);
+
     }
 }

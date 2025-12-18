@@ -32,11 +32,13 @@ public class GameManager : StateMachine
 
     public int GetLevel() => statData.GetLevel();
 
-
     
     [Header("Score Data")]
     // [SerializeField] private int score = 0;
     [SerializeField] private GameEvent onScoreUpdated;
+    [SerializeField] private GameEvent onWin;
+    public GameEvent GetOnWin() => onWin;
+    
 
 
     public override State InitialState()
@@ -100,14 +102,10 @@ public class GameManager : StateMachine
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextIndex);
     }
+
     public void ReachEndState()
     {
         SetState(new GameEndState(this));
-    }
-
-    public void ReachWinState()
-    {
-        SetState(new GameWinState(this));
     }
 
     // public int GetWave() => wave;

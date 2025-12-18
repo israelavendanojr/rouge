@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1705267894705854621}
   - component: {fileID: 7273985928240980414}
   - component: {fileID: 1881420265820404448}
+  - component: {fileID: 693289461225268115}
   m_Layer: 0
   m_Name: Bomb 3
   m_TagString: Untagged
@@ -119,6 +120,7 @@ MonoBehaviour:
   damage: 3
   explosionCollider: {fileID: 1705267894705854621}
   targetTag: Target
+  placeSound: {fileID: 11400000, guid: 60db691ed6c9ca4478e97c045026e3ef, type: 2}
   explosionSound: {fileID: 11400000, guid: 2289b4b7c745fce4ca4c5c868077c216, type: 2}
   particles: {fileID: 6990475374211065062, guid: 0d1ea34df054c644d84cdc67face6e40, type: 3}
 --- !u!114 &1881420265820404448
@@ -143,3 +145,83 @@ MonoBehaviour:
   followScale: 1
   autoShrinkWithHeight: 0
   heightShrinkMultiplier: 1
+--- !u!114 &693289461225268115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525442372378661998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22cd660c0ab6e34a838f01bbb118b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4525442372378661998}
+  tweens:
+  - tweenType: 0
+    playMode: 1
+    from: {x: 0, y: 0, z: 0}
+    to: {x: 0, y: 0.3, z: 0}
+    useFrom: 0
+    relative: 1
+    duration: 1.2
+    delay: 0
+    easeType: 16
+    loop: 0
+    pingPong: 1
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - tweenType: 1
+    playMode: 1
+    from: {x: 0, y: 0, z: 0}
+    to: {x: 1, y: 1, z: 1}
+    useFrom: 0
+    relative: 0
+    duration: 1
+    delay: 0
+    easeType: 31
+    loop: 0
+    pingPong: 0
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3898031522905998101, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - tweenType: 1
+    playMode: 0
+    from: {x: 1, y: 1, z: 1}
+    to: {x: 0, y: 0, z: 0}
+    useFrom: 0
+    relative: 0
+    duration: 0.2
+    delay: 0
+    easeType: 31
+    loop: 0
+    pingPong: 0
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3898031522905998101, guid: b28ee4c99c4105c4aa654a41d09d0484, type: 3}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

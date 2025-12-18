@@ -11,19 +11,13 @@ public class ConditionalSpawnerSegmentData : SegmentData
     
     public override void OnConsume(Vector3 position, Quaternion rotation, int level)
     {
-        AllyManager allyManager = AllyManager.Instance;
         
         GameObject prefabToSpawn = null;
         
-        // Check if we can spawn an ally
-        if (allyManager != null && allyManager.CanSpawnAlly())
+        if (primaryPrefabs != null && primaryPrefabs.Length > 0)
         {
-            // Spawn ally
-            if (primaryPrefabs != null && primaryPrefabs.Length > 0)
-            {
                 int index = Mathf.Clamp(level - 1, 0, primaryPrefabs.Length - 1);
                 prefabToSpawn = primaryPrefabs[index];
-            }
         }
         else
         {

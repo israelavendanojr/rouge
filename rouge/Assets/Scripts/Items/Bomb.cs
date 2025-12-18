@@ -8,7 +8,9 @@ public class Bomb : MonoBehaviour
 
     [SerializeField] private CircleCollider2D explosionCollider;
     [SerializeField] private string targetTag = "Target";
+    [SerializeField] SimpleAudioEvent placeSound;
     [SerializeField] SimpleAudioEvent explosionSound;
+
     [SerializeField] private GameObject particles;
 
     
@@ -22,6 +24,8 @@ public class Bomb : MonoBehaviour
         {
             explosionCollider.enabled = false;
         }
+
+        placeSound.Play();
     }
 
     private void Update()

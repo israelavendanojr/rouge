@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public abstract class StateMachine : MonoBehaviour
 {
@@ -35,6 +37,7 @@ public abstract class StateMachine : MonoBehaviour
         _currentState.Enter();
     }
     
+    #if UNITY_EDITOR
     void OnDrawGizmos() 
     {
         // Only run this code in the editor when the game is running or paused.
@@ -44,5 +47,5 @@ public abstract class StateMachine : MonoBehaviour
         Handles.color = Color.green;
         Handles.Label(transform.position + Vector3.up * 1.5f, _currentState.ToString()); 
     }
-
+    #endif
 }
